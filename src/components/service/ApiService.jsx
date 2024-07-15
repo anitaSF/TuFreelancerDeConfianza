@@ -1,3 +1,5 @@
+//Apis de los usuarios de los clientes
+
 async function getUserData(userId) {
     try {
         const dataFetchApi = await fetch(`https://6691859c26c2a69f6e9001c5.mockapi.io/api/${userId}`, {
@@ -12,19 +14,6 @@ async function getUserData(userId) {
     }
 }
 
-async function getUserFreelancerData(userId) {
-    try {
-        const dataFetchApi = await fetch(`https://6691899d26c2a69f6e900f96.mockapi.io/api/frelance${userId}`, {
-            method: 'GET',
-            headers: { 'content-type': 'application/json' }
-        });
-
-        const dataMenu = await dataFetchApi.json();
-        return dataMenu
-    } catch (error) {
-        console.log(error);
-    }
-}
 
 async function getPostUserData(userId) {
     try {
@@ -38,7 +27,35 @@ async function getPostUserData(userId) {
     }
 }
 
-async function getPostUserFreelancerData(userId) {
+async function getRemoveUser(userId) {
+    try {
+        await fetch(`https://6691859c26c2a69f6e9001c5.mockapi.io/api/${userId}`, {
+            method: 'DELETE',
+        });
+    } catch (error) {
+        console.log(error);
+    }
+
+}
+
+//Apis de los usuarios de los freelancers
+
+
+async function getFreelancerData(userId) {
+    try {
+        const dataFetchApi = await fetch(`https://6691899d26c2a69f6e900f96.mockapi.io/api/frelance/${userId}`, {
+            method: 'GET',
+            headers: { 'content-type': 'application/json' }
+        });
+
+        const dataMenu = await dataFetchApi.json();
+        return dataMenu
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+async function getPostFreelancerData(userId) {
     try {
         await fetch(`https://6691899d26c2a69f6e900f96.mockapi.io/api/frelance`, {
             method: 'POST',
@@ -50,4 +67,15 @@ async function getPostUserFreelancerData(userId) {
     }
 }
 
-export { getUserData, getPostUserData, getUserFreelancerData, getPostUserFreelancerData }
+async function getRemoveUser(userId) {
+    try {
+        await fetch(`https://6691899d26c2a69f6e900f96.mockapi.io/api/frelance/${userId}`, {
+            method: 'DELETE',
+        });
+    } catch (error) {
+        console.log(error);
+    }
+
+}
+
+export { getUserData, getPostUserData, getRemoveUser, getFreelancerData, getPostFreelancerData }
