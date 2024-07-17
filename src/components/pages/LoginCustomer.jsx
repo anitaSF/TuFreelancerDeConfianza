@@ -4,7 +4,9 @@ export default function LoginCustomer() {
     <div>
       <h2>¡BIENVENIDO!</h2>
 
-      <img></img>
+      <img>
+        
+      </img>
 
       <p>
         Accede a la plataforma y encuentra <b>Tu Freelancer de confianza</b>
