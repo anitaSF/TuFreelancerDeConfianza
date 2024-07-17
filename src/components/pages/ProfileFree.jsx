@@ -1,9 +1,14 @@
-import React from 'react'
+//Perfil de freelancer
+
+import Header from "../PofileFree/Header";
+import Main from "../PofileFree/Main";
+
 
 export default function ProfileFree() {
   return (
-    <div>
-      
-    </div>
+    <>
+      <Header />
+      <Main />
+    </>
   )
 }
