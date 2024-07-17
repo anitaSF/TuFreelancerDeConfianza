@@ -1,14 +1,16 @@
 //Perfil de freelancer
 
-import Header from "../PofileFree/Header";
-import Main from "../PofileFree/Main";
+import HeaderProfile from "../PofileFree/HeaderProfile";
+import MainProfile from "../PofileFree/MainProfile";
+
+
 
 
 export default function ProfileFree() {
   return (
     <>
-      <Header />
-      <Main />
+      <HeaderProfile />
+      <MainProfile />
     </>
   )
 }

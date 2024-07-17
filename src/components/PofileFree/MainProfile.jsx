@@ -1,4 +1,4 @@
-export default function Main() {
+export default function MainProfile() {
     return (
         <main>
             <article>
@@ -28,6 +28,7 @@ export default function Main() {
                     <p></p>
                 </a>
             </article>
+            {/* los botones deberían ir en otro componente con su lógica */}
             <article>
                 <form action="">
                     <button>Editar perfil</button>

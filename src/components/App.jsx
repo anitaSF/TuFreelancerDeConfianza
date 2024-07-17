@@ -10,6 +10,7 @@ import ProfileFree from "./pages/ProfileFree";
 import SearchService from "./pages/SearchService";
 import Details from "./pages/Details";
 import { useContext } from "react";
+import FreelanceRegister from "./pages/FreelanceRegister";
 
 function App() {
   const userDataContextExport = useContext(userDataContext);
@@ -22,6 +23,7 @@ function App() {
         <Route path="/customerLogin" element={<LoginCustomer />} />
         <Route path="/freelanceLogin" element={<LoginFree />} />
         <Route path="/customerRegister" element={<CustomerRegister />} />
+        <Route path="/freelancerRegister" element={<FreelanceRegister />} />
 
         <Route path="/yourProfile" element={<ProfileFree />} /> {/* <AuthRoute component={<ProfileFree />} /> */}
         <Route path="/services" element={<SearchService />} /> {/* <AuthRoute component={<SearchService />} /> */}
