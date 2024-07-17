@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Home() {
@@ -8,16 +9,20 @@ export default function Home() {
 
       <p>¿Que tipo de usuario eres?</p>
 
-      <nav>
-        <Link to="/customerLogin">
-          <button>Login Clientes</button>
-        </Link>
-        <Link to="/freelanceLogin">
-          <button>Login Freenlancers</button>
-        </Link>
-      </nav>
 
-    </div>
+      <button>
+        <Link to="/customerLogin" state="customerRegister">
+          Login Clientes
+        </Link>
+      </button>
+
+      <button>
+        <Link to="/freelanceLogin" state="freelancerRegister">
+          Login Freenlancers
+        </Link>
+      </button>
+
+    </div >
   )
 }
 

@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom"
 
 
-function HeaderLogin() {
+function HeaderLogin({ userType }) {
     return (
-        <header>
+        <header className={userType}>
             <nav>
                 <Link to="/">
                     <img src="" alt="" />
