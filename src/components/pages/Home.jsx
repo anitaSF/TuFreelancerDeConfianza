@@ -1,11 +1,18 @@
-import React from 'react'
-
-function Home() {
+export default function Home() {
   return (
-    <div>Home</div>
+    <div>
+      
+      <h1>Tu freelancer de confianza</h1>
+
+      <p>¿Que tipo de usuario eres?</p>
+
+
+      <button>Login Clientes</button>
+
+      <button>Login Freenlancers</button>
+
+    </div>
   )
 }
-
-export default Home
 
 
