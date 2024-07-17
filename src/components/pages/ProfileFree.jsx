@@ -1,9 +1,10 @@
+//Perfil de freelancer
 
 
 export default function ProfileFree() {
   return (
-    <div>
+    <form>
 
-    </div>
+    </form>
   )
 }
