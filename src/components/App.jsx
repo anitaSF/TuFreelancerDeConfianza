@@ -1,4 +1,4 @@
-import { userDataContext, useUserDataContext } from "./Context/UserDataContext";
+import { userDataContext } from "./Context/userDataContext";
 
 import { Route, Routes } from "react-router-dom";
 
@@ -9,9 +9,10 @@ import CustomerRegister from "./pages/CustomerRegister";
 import ProfileFree from "./pages/ProfileFree";
 import SearchService from "./pages/SearchService";
 import Details from "./pages/Details";
+import { useContext } from "react";
 
 function App() {
-  const userDataContextExport = useUserDataContext();
+  const userDataContextExport = useContext(userDataContext);
 
 
   return (
