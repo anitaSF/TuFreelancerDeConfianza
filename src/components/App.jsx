@@ -29,6 +29,6 @@ function App() {
       </Routes>
     </userDataContext.Provider>
   )
-};
+}
 
 export default App 
