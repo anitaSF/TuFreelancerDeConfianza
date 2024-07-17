@@ -10,17 +10,17 @@ export default function Home() {
       <p>¿Que tipo de usuario eres?</p>
 
 
-      <button>
-        <Link to="/customerLogin" state="customerRegister">
+      <Link to="/customerLogin" state="customerRegister">
+        <button>
           Login Clientes
-        </Link>
-      </button>
+        </button>
+      </Link>
 
-      <button>
-        <Link to="/freelanceLogin" state="freelancerRegister">
+      <Link to="/freelanceLogin" state="freelancerRegister">
+        <button>
           Login Freenlancers
-        </Link>
-      </button>
+        </button>
+      </Link>
 
     </div >
   )
