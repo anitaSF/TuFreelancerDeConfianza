@@ -2,8 +2,8 @@
 
 export default function LoginFree() {
   return (
-    <div>
-
-    </div>
+    <main>
+      <h1>Login Freelance</h1>
+    </main>
   )
 }
