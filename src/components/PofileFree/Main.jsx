@@ -1,6 +1,6 @@
 export default function Main() {
     return (
-        <>
+        <main>
             <article>
                 <figure>
                     <img src="" alt="" />
@@ -34,6 +34,6 @@ export default function Main() {
                     <button>Eliminar perfil</button>
                 </form>
             </article>
-        </>
+        </main>
     )
 }
