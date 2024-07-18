@@ -1,5 +1,6 @@
+import PropTypes from "prop-types"
 
-export default function LoginCustomer() {
+ function LoginCustomer({username, password}) { 
   return (
     <div>
       <h2>¡BIENVENIDO!</h2>
@@ -16,13 +17,23 @@ export default function LoginCustomer() {
         <input type="text" name="username" placeholder="Usuario" />
 
         <input type="password" name="password" placeholder="Contraseña" />
+
+        <button>Acceder</button>
+
       </form>
 
       <p>Olvidaste tu contraseña</p>
 
-      <button>Acceder</button>
+      
 
       <p>¿Todavia no tienes una cuenta?</p>
     </div>
   );
 }
+
+LoginCustomer.propTypes = {
+    username: PropTypes.string,
+    password: PropTypes.string
+}
+
+export default LoginCustomer
