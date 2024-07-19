@@ -1,0 +1,29 @@
+@import "fonts/fonts";
+@import "mixins/mixins";
+@import "variables/variables";
+@import "block/header";
+@import "block/main";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Poppins', Helvetica, 'Segoe UI', Tahoma, Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
