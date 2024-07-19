@@ -1,8 +1,13 @@
+import HeaderLogin from "../Login/HeaderLogin"
+import MainRegisterCustomer from "../Register/MainRegisterCustomer"
 
 
 function CustomerRegister() {
   return (
-    <div>CustomerRegister</div>
+    <>
+      <HeaderLogin />
+      <MainRegisterCustomer />
+    </>
   )
 }
 
