@@ -1,8 +1,7 @@
 import { useContext, useState } from "react"
 import LoginData from "./LoginData"
 import { userDataContext } from "../Context/userDataContext"
-import { Link } from "react-router-dom";
-/* import { getUserRegister } from "../service/ApiUsers"; */
+import { getUserLogin, getUserRegister } from "../service/ApiUsers";
 
 
 function MainRegisterCustomer() {
@@ -18,14 +17,19 @@ function MainRegisterCustomer() {
     const handleSubmit = async (ev) => {
         ev.preventDefault();
         console.log(ev);
-        context.setUserData(userForm);
-    }
+        const response = await getUserRegister(userForm);
+        console.log(response);
+        const loginUser = await context.useRegisterToLogin(userForm.name, userForm.email, userForm.password);
+        console.log(loginUser);
 
-    /* const response = await getUserRegister(userForm);
-    console.log(response); */
-    /*  if (response.success) {
-     
-     return <Navigate to="/services" />}*/
+        if (response.success) {
+            const loginreesponse = await getUserLogin(loginUser);
+            console.log(loginreesponse);
+            if (loginreesponse.sucess) {
+                context.setUserData(loginreesponse);
+            }
+        }
+    }
 
     return (
         <main>
@@ -33,9 +37,7 @@ function MainRegisterCustomer() {
             <h2>Si eres <strong>Cliente</strong>, regístrate aquí</h2>
             <form onChange={handleChange} onSubmit={handleSubmit}>
                 <LoginData />
-                <Link to="/services">
-                    <button>Registrarme</button>
-                </Link>
+                <button>Registrarme</button>
             </form>
         </main>
     )

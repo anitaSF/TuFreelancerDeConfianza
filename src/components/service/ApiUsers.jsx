@@ -34,4 +34,18 @@ async function getUserLogin(userData) {
     return solutionData
 }
 
-export { getUserRegister, getUserLogin }
+async function getUserValid(token) {
+    const solution = await fetch("https://proyecto-node-vercel.onrender.com/user/isLogin", {
+        method: 'POST',
+        body: JSON.stringify(token),
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+
+    const solutionData = await solution.json();
+
+    return solutionData
+}
+
+export { getUserRegister, getUserLogin, getUserValid }

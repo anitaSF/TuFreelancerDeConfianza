@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { useDataContext } from "../Context/useDataContext"
+import { userDataContext } from "../Context/userDataContext";
 
 import { Navigate } from "react-router-dom";
 
 function AuthRoute({ component }) {
-    const context = useContext(useDataContext);
+    const context = useContext(userDataContext);
 
     if (context.userData) {
         return component;
