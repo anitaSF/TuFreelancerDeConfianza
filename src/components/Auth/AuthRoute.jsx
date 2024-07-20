@@ -11,6 +11,6 @@ function AuthRoute({ component }) {
     } else {
         return <Navigate to="/" />
     }
-};
+}
 
 export default AuthRoute;

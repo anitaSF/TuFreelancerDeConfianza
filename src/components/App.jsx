@@ -10,6 +10,7 @@ import Details from "./pages/Details";
 import FreelanceRegister from "./pages/logAndRegister/FreelanceRegister";
 import CustomerRegister from "./pages/logAndRegister/CustomerRegister";
 import LoginFree from "./pages/logAndRegister/LoginFree";
+import AuthRoute from "./Auth/AuthRoute";
 
 function App() {
   const userDataContextExport = useUserDataContext();
@@ -24,9 +25,9 @@ function App() {
         <Route path="/customerRegister" element={<CustomerRegister />} />
         <Route path="/freelancerRegister" element={<FreelanceRegister />} />
 
-        <Route path="/yourProfile" element={<ProfileFree />} /> {/* <AuthRoute component={<ProfileFree />} /> */}
-        <Route path="/services" element={<SearchService />} /> {/* <AuthRoute component={<SearchService />} /> */}
-        <Route path="/freelanceProfile/:idFreelance" element={<Details />} /> {/* <AuthRoute component={<Details />} /> */}
+        <Route path="/yourProfile" element={<AuthRoute component={<ProfileFree />} />} />
+        <Route path="/services" element={<AuthRoute component={<SearchService />} />} />
+        <Route path="/freelanceProfile/:idFreelance" element={<AuthRoute component={<Details />} />} />
 
       </Routes>
     </userDataContext.Provider>

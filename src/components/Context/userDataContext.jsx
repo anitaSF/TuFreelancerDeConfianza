@@ -14,5 +14,5 @@ export const useUserDataContext = () => {
 
     const [userData, setUserData] = useState(initial_state_userlog);
 
-    return { userData, setUserData };
+    return { userData, setUserData, initial_state_userlog };
 };
