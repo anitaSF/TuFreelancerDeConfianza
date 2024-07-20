@@ -18,10 +18,6 @@ function LoginData() {
                 <div>
                     <input type="password" name="password" id="password" placeholder="Contraseña" />
                 </div>
-                <div>
-                    <label htmlFor="image">Añade tu foto de perfil: </label>
-                    <input type="text" name="image" id="image" placeholder="imagen" />
-                </div>
             </fieldset>
 
         </>
