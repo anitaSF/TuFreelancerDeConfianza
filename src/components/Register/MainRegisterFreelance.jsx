@@ -35,6 +35,9 @@ function MainRegisterFreelance() {
                         <input type="text" name="location" id="location" placeholder="Indica tu disposición geográfica" />
                     </div>
                     <div>
+                        <label htmlFor="description">Presentación</label>
+                        <textarea type="text" name="description" id="description" placeholder="Escribe tu carta de presentación" /></div>
+                    <div>
                         <label htmlFor="cv">Indica la dirección web de tu curriculum</label>
                         <input type="text" name="cv" id="cv" placeholder="Añadir curriculum" />
                     </div>
