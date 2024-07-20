@@ -6,8 +6,13 @@ import { createContext } from "react";
 export const userDataContext = createContext();
 
 export const useUserDataContext = () => {
+    const initial_state_userlog = {
+        name: "",
+        email: "",
+        password: ""
+    }
 
-    const [userData, setUserData] = useState([]);
+    const [userData, setUserData] = useState(initial_state_userlog);
 
     return { userData, setUserData };
 };

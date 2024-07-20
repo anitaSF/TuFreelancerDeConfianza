@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
-import HeaderLogin from "../Login/HeaderLogin";
-import MainLogin from "../Login/MainLogin";
+import HeaderLogin from "../../Login/HeaderLogin";
+import MainLogin from "../../Login/MainLogin";
 
 export default function LoginCustomer() {
   const location = useLocation()
