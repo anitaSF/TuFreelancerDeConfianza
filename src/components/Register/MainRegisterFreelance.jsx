@@ -1,12 +1,34 @@
+import { useContext, useState } from "react";
 import LoginData from "./LoginData"
+import { userDataContext } from "../Context/userDataContext";
+import { useFreelanceContext } from "../Context/frelanceContext";
 
 
 function MainRegisterFreelance() {
+    const contextUser = useContext(userDataContext);
+
+    const contextFreelance = useContext(useFreelanceContext);
+
+    const [loginData, setLoginData] = useState({});
+
+    const [userFreelanceData, setuserFreelanceData] = useState({});
+
+    const handleChange = (ev) => {
+        ev.preventDefault();
+
+        if (ev.target.id === "name" || ev.target.id === "email" || ev.target.id === "password") {
+            setLoginData({ ...loginData, [ev.target.id]: ev.target.value });
+            setuserFreelanceData({ ...userFreelanceData, [ev.target.id]: ev.target.value });
+        } else {
+            setuserFreelanceData({ ...userFreelanceData, [ev.target.id]: ev.target.value });
+        }
+    }
+
     return (
         <main className="container">
             <h1>¡Hola!</h1>
             <h2>Si eres <strong>Freelancer</strong>, regístrate aquí</h2>
-            <form>
+            <form onChange={handleChange}>
                 <LoginData />
                 <fieldset>
                     <legend>Datos profesionales</legend>
@@ -28,7 +50,7 @@ function MainRegisterFreelance() {
                     </div>
                     <div>
                         <label htmlFor="budget">Presupuesto</label>
-                        <input type="text" name="budget" id="budget" placeholder="€/hora" />
+                        <input type="num" name="budget" id="budget" placeholder="€/hora" />
                     </div>
                     <div>
                         <label htmlFor="location">Ubicación de trabajo</label>
@@ -43,7 +65,7 @@ function MainRegisterFreelance() {
                     </div>
                 </fieldset>
                 <div>
-                    <button>Regístrarme</button>
+                    <button type="submit">Regístrarme</button>
                 </div>
             </form>
         </main>

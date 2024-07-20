@@ -37,7 +37,7 @@ function MainRegisterCustomer() {
             <h2>Si eres <strong>Cliente</strong>, regístrate aquí</h2>
             <form onChange={handleChange} onSubmit={handleSubmit}>
                 <LoginData />
-                <button>Registrarme</button>
+                <button type="submit">Registrarme</button>
             </form>
         </main>
     )
