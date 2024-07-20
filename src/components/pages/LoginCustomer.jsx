@@ -7,6 +7,8 @@ export default function LoginCustomer() {
   const userType = location.state
   console.log(userType);
 
+
+
   return (
     <>
       <HeaderLogin userType={userType} />
