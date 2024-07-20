@@ -1,5 +1,5 @@
-import HeaderLogin from "../Login/HeaderLogin"
-import MainRegisterCustomer from "../Register/MainRegisterCustomer"
+import HeaderLogin from "../../Login/HeaderLogin"
+import MainRegisterCustomer from "../../Register/MainRegisterCustomer"
 
 
 function CustomerRegister() {

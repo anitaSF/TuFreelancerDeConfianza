@@ -4,12 +4,12 @@ import { Route, Routes } from "react-router-dom";
 
 import Home from "./pages/Home";
 import LoginCustomer from "./pages/logAndRegister/LoginCustomer";
-import LoginFree from "./pages/LoginFree";
-import CustomerRegister from "./pages/CustomerRegister";
 import ProfileFree from "./pages/ProfileFree";
 import SearchService from "./pages/SearchService";
 import Details from "./pages/Details";
 import FreelanceRegister from "./pages/logAndRegister/FreelanceRegister";
+import CustomerRegister from "./pages/logAndRegister/CustomerRegister";
+import LoginFree from "./pages/logAndRegister/LoginFree";
 
 function App() {
   const userDataContextExport = useUserDataContext();
