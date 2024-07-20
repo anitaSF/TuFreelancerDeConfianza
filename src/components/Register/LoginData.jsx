@@ -3,6 +3,7 @@ function LoginData() {
     return (
         <>
             <fieldset>
+                <legend>Datos Personales</legend>
                 <label htmlFor="name">Nombre y </label><label htmlFor="surname">Apellido</label>
                 <input type="text" name="name" id="name" placeholder="Nombre" />
 
