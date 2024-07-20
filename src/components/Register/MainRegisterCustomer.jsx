@@ -29,6 +29,8 @@ function MainRegisterCustomer() {
                 context.setUserData(loginreesponse);
             }
         }
+
+        ev.target.reset();
     }
 
     return (

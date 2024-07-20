@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import LoginData from "./LoginData"
 import { userDataContext } from "../Context/userDataContext";
 import { useFreelanceContext } from "../Context/frelanceContext";
+import { getUserLogin } from "../service/ApiUsers";
 
 
 function MainRegisterFreelance() {
@@ -22,13 +23,28 @@ function MainRegisterFreelance() {
         } else {
             setuserFreelanceData({ ...userFreelanceData, [ev.target.id]: ev.target.value });
         }
+
+    }
+
+    const handleSubmit = async (ev) => {
+        ev.preventDefault();
+
+        console.log(ev);
+        const solution = await getUserLogin(loginData);
+
+        if (solution.success) {
+            const token = solution.token;
+            await contextUser.setUserData(token);
+            localStorage.setItem("user", JSON.stringify(token));
+        }
+        ev.target.reset()
     }
 
     return (
         <main className="container">
             <h1>¡Hola!</h1>
             <h2>Si eres <strong>Freelancer</strong>, regístrate aquí</h2>
-            <form onChange={handleChange}>
+            <form onChange={handleChange} onSubmit={handleSubmit}>
                 <LoginData />
                 <fieldset>
                     <legend>Datos profesionales</legend>
