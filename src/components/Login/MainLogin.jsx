@@ -23,6 +23,8 @@ function MainLogin({ userType }) {
             const solutionLogin = await getUserLogin(userData);
             setEmpty("");
 
+            console.log(solutionLogin);
+
             if (solutionLogin.success) {
                 const token = solutionLogin.token;
                 await context.setUserData(token);
@@ -60,15 +62,18 @@ function MainLogin({ userType }) {
             <p>{empty}</p>
 
             <form onClick={handleClick}>
-                <input onChange={handleChange} type="email" name="email" placeholder="Email" />
 
+                <input onChange={handleChange} type="email" name="email" placeholder="Email" />
                 <input onChange={handleChange} type="password" name="password" placeholder="Contraseña" />
+                <button type="submit">Acceder</button>
+
             </form>
-            <p> {empty}</p>
+            <p>{empty}</p>
+
             {/* aquí hay que ponerle una funcionalidad y vrear más paginas No merece la pena añadirlo
             <p>Olvidaste tu contraseña</p>
             */}
-            <button type="submit">Acceder</button>
+
 
             <p>¿Todavia no tienes una cuenta?</p>
             <Link to={`/${userType}`}>

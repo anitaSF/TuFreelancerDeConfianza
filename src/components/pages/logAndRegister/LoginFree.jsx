@@ -6,7 +6,6 @@ import MainLogin from '../../Login/MainLogin';
 export default function LoginFree() {
   const location = useLocation()
   const userType = location.state
-  console.log(userType);
 
   return (
     <>

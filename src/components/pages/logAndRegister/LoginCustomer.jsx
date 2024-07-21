@@ -5,9 +5,6 @@ import MainLogin from "../../Login/MainLogin";
 export default function LoginCustomer() {
   const location = useLocation()
   const userType = location.state
-  console.log(userType);
-
-
 
   return (
     <>
