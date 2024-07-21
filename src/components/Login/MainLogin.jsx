@@ -1,36 +1,50 @@
 
 import { useState, useContext } from "react"
 import { Link } from "react-router-dom"
-import {userDataContext} from "../Context/userDataContext.jsx";
+import { userDataContext } from "../Context/userDataContext.jsx";
+import { getUserLogin } from "../service/ApiUsers.jsx";
 
 
 function MainLogin({ userType }) {
 
-        const context = useContext(userDataContext)
+    const context = useContext(userDataContext)
 
-        const [empty, setEmpty] = useState("")
+    const [userData, setUserData] = useState({
+        email: "",
+        password: ""
+    })
 
-    const handleClick = (ev) => {
+    const [empty, setEmpty] = useState("")
+
+    const handleClick = async (ev) => {
         ev.preventDefault();
         if (userData) {
-            context.setUserData(userData)
-            
-                   } else {
 
-                    setEmpty("Por favor complete los campos")
+            const solutionLogin = await getUserLogin(userData);
+            setEmpty("");
 
-                   }
+            if (solutionLogin.success) {
+                const token = solutionLogin.token;
+                await context.setUserData(token);
+                localStorage.setItem("user", JSON.stringify(token));
+            } else {
+                setEmpty(`No se ha podido iniciar sesión porque ${solutionLogin.message}`);
+            }
+
+        } else {
+
+            setEmpty("Por favor complete los campos");
+
+        }
+
+        ev.target.reset;
     };
 
-   const [userData, setUserData] = useState({
-      username:"",
-      password:""
-    })
-console.log(context);
+
     const handleChange = (ev) => {
-    const {name,value} = ev.target
-    setUserData({...userData,[name]: value})
-    
+        const { name, value } = ev.target
+        setUserData({ ...userData, [name]: value })
+
     }
 
     return (
@@ -40,11 +54,13 @@ console.log(context);
             <img></img>
 
             <p>
-                Accede a la plataforma y encuentra <b>Tu Freelancer de confianza</b>
+                Accede a la plataforma y encuentra <strong>Tu Freelancer de confianza</strong>
             </p>
 
-            <form action="">
-                <input onChange={handleChange} type="text" name="username" placeholder="Usuario" />
+            <p>{empty}</p>
+
+            <form onClick={handleClick}>
+                <input onChange={handleChange} type="email" name="email" placeholder="Email" />
 
                 <input onChange={handleChange} type="password" name="password" placeholder="Contraseña" />
             </form>
@@ -52,7 +68,7 @@ console.log(context);
             {/* aquí hay que ponerle una funcionalidad y vrear más paginas No merece la pena añadirlo
             <p>Olvidaste tu contraseña</p>
             */}
-            <button onClick={handleClick}>Acceder</button>
+            <button type="submit">Acceder</button>
 
             <p>¿Todavia no tienes una cuenta?</p>
             <Link to={`/${userType}`}>
