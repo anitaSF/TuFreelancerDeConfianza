@@ -14,9 +14,8 @@ export const useUserDataContext = () => {
 
     const [userData, setUserData] = useState(null);
 
-    const useRegisterToLogin = (nameVar, emailVar, passwordVar) => {
+    const useRegisterToLogin = (emailVar, passwordVar) => {
         const loginUser = {
-            name: nameVar,
             emil: emailVar,
             password: passwordVar,
         }

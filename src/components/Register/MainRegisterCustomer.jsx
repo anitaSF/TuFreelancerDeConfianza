@@ -9,6 +9,8 @@ function MainRegisterCustomer() {
 
     const [userForm, setUserForm] = useState(context.initial_state_userlog);
 
+    const [errorText, setErrorText] = useState("");
+
     const handleChange = (ev) => {
         ev.preventDefault();
         setUserForm({ ...userForm, [ev.target.id]: ev.target.value });
@@ -16,18 +18,29 @@ function MainRegisterCustomer() {
 
     const handleSubmit = async (ev) => {
         ev.preventDefault();
-        console.log(ev);
+
         const response = await getUserRegister(userForm);
+
         console.log(response);
-        const loginUser = await context.useRegisterToLogin(userForm.name, userForm.email, userForm.password);
+
+        const loginUser = await context.useRegisterToLogin(userForm.email, userForm.password);
+
         console.log(loginUser);
 
         if (response.success) {
             const loginreesponse = await getUserLogin(loginUser);
+
             console.log(loginreesponse);
+
             if (loginreesponse.sucess) {
                 context.setUserData(loginreesponse);
+                const token = loginreesponse.token;
+                localStorage.setItem("user", JSON.stringify(token));
+            } else {
+                setErrorText("No se ha podido iniciar la sesión. Por favor, dirijase a la pagina de login e iniciar sesión.")
             }
+        } else {
+            setErrorText(`No se ha podido realizar el registro porque ${response.message}`)
         }
 
         ev.target.reset();
@@ -37,6 +50,7 @@ function MainRegisterCustomer() {
         <main>
             <h1>¡Hola!</h1>
             <h2>Si eres <strong>Cliente</strong>, regístrate aquí</h2>
+            <p className="errorText">{errorText}</p>
             <form onChange={handleChange} onSubmit={handleSubmit}>
                 <LoginData />
                 <button type="submit">Registrarme</button>

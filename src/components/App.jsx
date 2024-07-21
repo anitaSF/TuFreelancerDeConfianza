@@ -1,5 +1,5 @@
 import { useUserDataContext, userDataContext } from "./Context/userDataContext";
-
+import { freelanceContext, useFreelanceContext } from "./Context/frelanceContext";
 import { Route, Routes } from "react-router-dom";
 
 import Home from "./pages/Home";
@@ -11,7 +11,6 @@ import FreelanceRegister from "./pages/logAndRegister/FreelanceRegister";
 import CustomerRegister from "./pages/logAndRegister/CustomerRegister";
 import LoginFree from "./pages/logAndRegister/LoginFree";
 import AuthRoute from "./Auth/AuthRoute";
-import { freelanceContext, useFreelanceContext } from "./Context/frelanceContext";
 
 function App() {
   const userDataContextExport = useUserDataContext();

@@ -62,7 +62,7 @@ function MainRegisterFreelance() {
         <main className="container">
             <h1>¡Hola!</h1>
             <h2>Si eres <strong>Freelancer</strong>, regístrate aquí</h2>
-            <p>{errorText}</p>
+            <p className="errorText">{errorText}</p>
             <form onChange={handleChange} onSubmit={handleSubmit}>
                 <LoginData />
                 <fieldset>
