@@ -15,6 +15,8 @@ function MainRegisterFreelance() {
 
     const [userFreelanceData, setuserFreelanceData] = useState({});
 
+    const [errorText, setErrorText] = useState("");
+
     const handleChange = (ev) => {
         ev.preventDefault();
 
@@ -31,7 +33,6 @@ function MainRegisterFreelance() {
 
     const handleSubmit = async (ev) => {
         ev.preventDefault();
-
         contextFreelance.setUserFreelancer(userFreelanceData);
 
         const solutionRegiter = await getUserRegister(loginData);
@@ -39,19 +40,19 @@ function MainRegisterFreelance() {
         console.log(solutionRegiter);
 
         if (solutionRegiter.success) {
-            const solutionFAPi = await getPostFreelancerData(userFreelanceData);
-
-            console.log(solutionFAPi);
+            await getPostFreelancerData(userFreelanceData);
 
             const solutionLogin = await getUserLogin(loginData);
-
-            console.log(solutionLogin);
 
             if (solutionLogin.success) {
                 const token = solutionLogin.token;
                 await contextUser.setUserData(token);
                 localStorage.setItem("user", JSON.stringify(token));
+            } else {
+                setErrorText("El registro se ha realizado correctamente pero no se ha podido iniciar sesión. Por favor acuda a la página de login para iniciar sesión")
             }
+        } else {
+            setErrorText(`No se ha podido realizar el registro porque ${solutionRegiter.message}`)
         }
 
         ev.target.reset()
@@ -61,6 +62,7 @@ function MainRegisterFreelance() {
         <main className="container">
             <h1>¡Hola!</h1>
             <h2>Si eres <strong>Freelancer</strong>, regístrate aquí</h2>
+            <p>{errorText}</p>
             <form onChange={handleChange} onSubmit={handleSubmit}>
                 <LoginData />
                 <fieldset>
