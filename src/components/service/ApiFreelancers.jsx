@@ -30,11 +30,13 @@ async function getFreelancerData(userId) {
 
 async function getPostFreelancerData(userId) {
     try {
-        await fetch(`https://6691899d26c2a69f6e900f96.mockapi.io/api/frelance`, {
+        const solution = await fetch(`https://6691899d26c2a69f6e900f96.mockapi.io/api/frelance/user`, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(userId)
-        })
+        }
+        )
+        return solution.json();
     } catch (error) {
         console.log(error);
     }

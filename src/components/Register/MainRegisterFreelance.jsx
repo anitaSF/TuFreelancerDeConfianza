@@ -1,14 +1,15 @@
 import { useContext, useState } from "react";
 import LoginData from "./LoginData"
 import { userDataContext } from "../Context/userDataContext";
-import { useFreelanceContext } from "../Context/frelanceContext";
-import { getUserLogin } from "../service/ApiUsers";
+import { getUserLogin, getUserRegister } from "../service/ApiUsers";
+import { getPostFreelancerData } from "../service/ApiFreelancers";
+import { freelanceContext } from "../Context/frelanceContext";
 
 
 function MainRegisterFreelance() {
     const contextUser = useContext(userDataContext);
 
-    const contextFreelance = useContext(useFreelanceContext);
+    const contextFreelance = useContext(freelanceContext);
 
     const [loginData, setLoginData] = useState({});
 
@@ -26,17 +27,33 @@ function MainRegisterFreelance() {
 
     }
 
+    console.log(userFreelanceData);
+
     const handleSubmit = async (ev) => {
         ev.preventDefault();
 
-        console.log(ev);
-        const solution = await getUserLogin(loginData);
+        contextFreelance.setUserFreelancer(userFreelanceData);
 
-        if (solution.success) {
-            const token = solution.token;
-            await contextUser.setUserData(token);
-            localStorage.setItem("user", JSON.stringify(token));
+        const solutionRegiter = await getUserRegister(loginData);
+
+        console.log(solutionRegiter);
+
+        if (solutionRegiter.success) {
+            const solutionFAPi = await getPostFreelancerData(userFreelanceData);
+
+            console.log(solutionFAPi);
+
+            const solutionLogin = await getUserLogin(loginData);
+
+            console.log(solutionLogin);
+
+            if (solutionLogin.success) {
+                const token = solutionLogin.token;
+                await contextUser.setUserData(token);
+                localStorage.setItem("user", JSON.stringify(token));
+            }
         }
+
         ev.target.reset()
     }
 

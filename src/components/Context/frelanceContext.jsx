@@ -9,7 +9,7 @@ export const useFreelanceContext = () => {
 
     const [freelancer, setFreelancer] = useState([]);
 
-    const [userFreelancer, setUserFreelancer] = useState({});
+    const [userFreelancer, setUserFreelancer] = useState();
 
     const [categoryFree, setCategoryFree] = useState([
         'Tu Manitas de confianza',
