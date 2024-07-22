@@ -1,5 +1,5 @@
-import HeaderLogin from "../Login/HeaderLogin"
-import MainRegisterFreelance from "../Register/MainRegisterFreelance"
+import HeaderLogin from "../../Login/HeaderLogin"
+import MainRegisterFreelance from "../../Register/MainRegisterFreelance"
 
 function FreelanceRegister() {
     return (
