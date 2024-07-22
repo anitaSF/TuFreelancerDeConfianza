@@ -1,32 +1,30 @@
 //Apis de los datos de los freelancers
 
-async function getFreelancersData() {
-    try {
-        const dataFetchApi = await fetch('https://6691899d26c2a69f6e900f96.mockapi.io/api/frelance/', {
-            method: 'GET',
-            headers: { 'content-type': 'application/json' }
-        });
+import axios from "axios";
 
-        const dataMenu = await dataFetchApi.json();
-        return dataMenu
-    } catch (error) {
-        console.log(error);
-    }
+const APIHeaders = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer token"
 }
 
-async function getFreelancerData(userId) {
-    try {
-        const dataFetchApi = await fetch(`https://6691899d26c2a69f6e900f96.mockapi.io/api/frelance/${userId}`, {
-            method: 'GET',
-            headers: { 'content-type': 'application/json' }
-        });
+const API = axios.create({
+    baseURL: 'https://6691899d26c2a69f6e900f96.mockapi.io/api/frelance/',
+    headers: APIHeaders,
+})
 
-        const dataMenu = await dataFetchApi.json();
-        return dataMenu
+const getFreelancersData = async () => {
+    try {
+        const response = await API.get('/user');
+        return response.data;
     } catch (error) {
-        console.log(error);
+        console.error('Error fetching freelancers:', error);
+        throw error;
     }
-}
+
+};
+
+
 
 async function getPostFreelancerData(userId) {
     try {
@@ -66,4 +64,4 @@ async function getRemoveFreelancer(userId) {
 
 }
 
-export { getFreelancerData, getPostFreelancerData, getPutFreelancerData, getRemoveFreelancer, getFreelancersData }
+export { getPostFreelancerData, getPutFreelancerData, getRemoveFreelancer, getFreelancersData }
