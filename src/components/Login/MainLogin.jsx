@@ -2,13 +2,15 @@
 import { useState, useContext } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { userDataContext } from "../Context/userDataContext.jsx";
+import { freelanceContext } from "../Context/frelanceContext.jsx";
 import { getUserLogin } from "../service/ApiUsers.jsx";
 
 
 function MainLogin({ userType }) {
     const navigat = useNavigate();
 
-    const context = useContext(userDataContext)
+    const context = useContext(userDataContext);
+    const contextFrelance = useContext(freelanceContext);
 
     const [userData, setUserData] = useState({
         email: "",
@@ -30,7 +32,31 @@ function MainLogin({ userType }) {
                 const token = await solutionLogin.token;
                 await context.setUserData(token);
                 localStorage.setItem("user", JSON.stringify(token));
-                navigat('/services');
+
+                if (userType === 'customerRegister') {
+                    navigat('/services');
+
+                } else if (userType === 'freelancerRegister') {
+
+                    contextFrelance.setUserFreelancer(userData);
+                    console.log(contextFrelance.listFreelancer);
+
+                    const freelanceData = contextFrelance.listFreelancer;
+
+                    const freelanceUserDataArray = freelanceData.filter((freelance) => {
+                        return freelance.email === userData.email;
+                    });
+                    const [freelanceUserData] = freelanceUserDataArray;
+
+                    if (freelanceUserData.email) {
+
+                        contextFrelance.setUserFreelancer(freelanceUserData);
+                        navigat('/yourProfile');
+
+                    } else {
+                        setEmpty("Este usuario no es un freelancer. Por favor, realice el inicio de sesión en la opción de cliente.");
+                    }
+                }
             } else {
                 setEmpty(`No se ha podido iniciar sesión porque ${solutionLogin.message}`);
             }

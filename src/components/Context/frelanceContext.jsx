@@ -19,7 +19,8 @@ export const useFreelanceContext = () => {
         'Tu Profesor de confianza',
         'Tu Técnico de confianza',
         'Tu Canguro de confianza',
-        'Tu Auxiliar de confianza'
+        'Tu Auxiliar de confianza',
+        'Tu Informático de confianza'
     ]);
 
 

@@ -51,7 +51,7 @@ function MainRegisterFreelance() {
                 const token = solutionLogin.token;
                 await contextUser.setUserData(token);
                 localStorage.setItem("user", JSON.stringify(token));
-                navigate('/services')
+                navigate('/yourProfile')
             } else {
                 setErrorText("El registro se ha realizado correctamente pero no se ha podido iniciar sesión. Por favor acuda a la página de login para iniciar sesión")
             }
@@ -75,13 +75,18 @@ function MainRegisterFreelance() {
                         <label htmlFor="category">¿Qué tipo de freelancer eres?</label>
                         <select name="category" id="category">
                             <option value="">Selecciona una opción</option>
-                            <option value="cuidador">Cuidador</option>
-                            <option value="informatico">Informático</option>
-                            <option value="canguro">Canguro</option>
-                            <option value="profesor">Profesor</option>
-                            <option value="manitas">Manitas</option>
-                            <option value="auxiliar">Auxiliar</option>
+                            <option value="Tu Cuidador de confianza">Cuidador</option>
+                            <option value="Tu Informático de confianza">Informático</option>
+                            <option value="Tu Canguro de confianza">Canguro</option>
+                            <option value="Tu Profesor de confianza">Profesor</option>
+                            <option value="Tu Manitas de confianza">Manitas</option>
+                            <option value="Tu Auxiliar de confianza">Auxiliar</option>
+                            <option value="Tu Técnico de confianza">Técnico</option>
                         </select>
+                    </div>
+                    <div>
+                        <label htmlFor="img"></label>
+                        <input type="text" name="img" id="img" placeholder="Añade el url de una foto tuya" />
                     </div>
                     <div>
                         <label htmlFor="title">Titulación</label>

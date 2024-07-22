@@ -14,7 +14,7 @@ import SelectedService from "./pages/SelectedService";
 import FreelanceRegister from "./pages/logAndRegister/FreelanceRegister";
 import CustomerRegister from "./pages/logAndRegister/CustomerRegister";
 import LoginFree from "./pages/logAndRegister/LoginFree";
-import AuthRoute from "./Auth/AuthRoute";
+//import AuthRoute from "./Auth/AuthRoute";
 
 function App() {
   const userDataContextExport = useUserDataContext();
@@ -29,7 +29,7 @@ function App() {
           <Route path="/freelanceLogin" element={<LoginFree />} />
           <Route path="/customerRegister" element={<CustomerRegister />} />
           <Route path="/freelancerRegister" element={<FreelanceRegister />} />
-         <Route path="/yourProfile" element={<ProfileFree />} /> {/* <AuthRoute component={<ProfileFree />} /> */}
+          <Route path="/yourProfile" element={<ProfileFree />} /> {/* <AuthRoute component={<ProfileFree />} /> */}
           <Route path="/services" element={<SearchService />} /> {/* <AuthRoute component={<SearchService />} /> */}
           <Route path="/freelancers" element={<SelectedService />} /> {/* <AuthRoute component={<SelectedService />} /> */}
           <Route path="/freelancers/:idFreelancer" element={<Details />} /> {/* <AuthRoute component={<Details />} /> */}
