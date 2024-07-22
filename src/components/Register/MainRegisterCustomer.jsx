@@ -30,6 +30,7 @@ function MainRegisterCustomer() {
 
         console.log(loginUser);
 
+
         if (response.success) {
             const loginreesponse = await getUserLogin(loginUser);
 
