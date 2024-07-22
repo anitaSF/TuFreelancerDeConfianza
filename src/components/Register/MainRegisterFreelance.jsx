@@ -51,7 +51,7 @@ function MainRegisterFreelance() {
                 const token = solutionLogin.token;
                 await contextUser.setUserData(token);
                 localStorage.setItem("user", JSON.stringify(token));
-                navigate('/services')
+                navigate('/yourProfile')
             } else {
                 setErrorText("El registro se ha realizado correctamente pero no se ha podido iniciar sesión. Por favor acuda a la página de login para iniciar sesión")
             }
