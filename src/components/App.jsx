@@ -1,5 +1,7 @@
 import { useUserDataContext, userDataContext } from "./Context/userDataContext";
+
 import { freelanceContext, useFreelanceContext } from "./Context/frelanceContext";
+
 import { Route, Routes } from "react-router-dom";
 
 import Home from "./pages/Home";
@@ -7,6 +9,8 @@ import LoginCustomer from "./pages/logAndRegister/LoginCustomer";
 import ProfileFree from "./pages/ProfileFree";
 import SearchService from "./pages/SearchService";
 import Details from "./pages/Details";
+import SelectedService from "./pages/SelectedService";
+
 import FreelanceRegister from "./pages/logAndRegister/FreelanceRegister";
 import CustomerRegister from "./pages/logAndRegister/CustomerRegister";
 import LoginFree from "./pages/logAndRegister/LoginFree";
@@ -14,11 +18,10 @@ import AuthRoute from "./Auth/AuthRoute";
 
 function App() {
   const userDataContextExport = useUserDataContext();
-
-  const useFreelanceContextExport = useFreelanceContext();
+  const freelanceContextExport = useFreelanceContext();
 
   return (
-    <freelanceContext.Provider value={useFreelanceContextExport}>
+    <freelanceContext.Provider value={freelanceContextExport}>
       <userDataContext.Provider value={userDataContextExport}>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -26,11 +29,10 @@ function App() {
           <Route path="/freelanceLogin" element={<LoginFree />} />
           <Route path="/customerRegister" element={<CustomerRegister />} />
           <Route path="/freelancerRegister" element={<FreelanceRegister />} />
-
-          <Route path="/yourProfile" element={<AuthRoute component={<ProfileFree />} />} />
-          <Route path="/services" element={<AuthRoute component={<SearchService />} />} />
-          <Route path="/freelanceProfile/:idFreelance" element={<AuthRoute component={<Details />} />} />
-
+         <Route path="/yourProfile" element={<ProfileFree />} /> {/* <AuthRoute component={<ProfileFree />} /> */}
+          <Route path="/services" element={<SearchService />} /> {/* <AuthRoute component={<SearchService />} /> */}
+          <Route path="/freelancers" element={<SelectedService />} /> {/* <AuthRoute component={<SelectedService />} /> */}
+          <Route path="/freelancers/:idFreelancer" element={<Details />} /> {/* <AuthRoute component={<Details />} /> */}
         </Routes>
       </userDataContext.Provider>
     </freelanceContext.Provider>

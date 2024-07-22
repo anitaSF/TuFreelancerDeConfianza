@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createContext } from "react";
+
+import { getFreelancersData } from "../service/ApiFreelancers";
 
 //Este contexto es para guardar la información de la lista de freelancers que nos bajemos de la api
 
@@ -7,7 +9,7 @@ export const freelanceContext = createContext();
 
 export const useFreelanceContext = () => {
 
-    const [freelancer, setFreelancer] = useState([]);
+    const [listFreelancer, setListFreelancer] = useState([]);
 
     const [userFreelancer, setUserFreelancer] = useState();
 
@@ -20,5 +22,15 @@ export const useFreelanceContext = () => {
         'Tu Auxiliar de confianza'
     ]);
 
-    return { freelancer, setFreelancer, categoryFree, setCategoryFree, setUserFreelancer, userFreelancer };
+
+    const [categorySelected, setCategorySelected] = useState('');
+
+    useEffect(() => {
+        getFreelancersData()
+            .then(data => setListFreelancer(data))
+            .catch(error => console.error('Error in useEffect: ', error));
+    }, []);
+
+    return { listFreelancer, setListFreelancer, categoryFree, setCategoryFree, categorySelected, setCategorySelected, setUserFreelancer, userFreelancer };
+
 };
