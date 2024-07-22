@@ -1,4 +1,6 @@
 export default function MainProfile() {
+
+
     return (
         <main>
             <article>

@@ -1,11 +1,14 @@
 import { useContext, useState } from "react"
-import LoginData from "./LoginData"
+import { useNavigate } from "react-router-dom";
 import { userDataContext } from "../Context/userDataContext"
 import { getUserLogin, getUserRegister } from "../service/ApiUsers";
+import LoginData from "./LoginData"
 
 
 function MainRegisterCustomer() {
-    const context = useContext(userDataContext)
+    const context = useContext(userDataContext);
+
+    const navigate = useNavigate();
 
     const [userForm, setUserForm] = useState(context.initial_state_userlog);
 
@@ -32,12 +35,13 @@ function MainRegisterCustomer() {
 
             console.log(loginreesponse);
 
-            if (loginreesponse.sucess) {
+            if (loginreesponse.success) {
                 context.setUserData(loginreesponse);
                 const token = loginreesponse.token;
                 localStorage.setItem("user", JSON.stringify(token));
+                navigate('/services')
             } else {
-                setErrorText("No se ha podido iniciar la sesión. Por favor, dirijase a la pagina de login e iniciar sesión.")
+                setErrorText(`No se ha podido iniciar la sesión porque ${loginreesponse.message}`)
             }
         } else {
             setErrorText(`No se ha podido realizar el registro porque ${response.message}`)

@@ -1,13 +1,16 @@
 import { useContext, useState } from "react";
-import LoginData from "./LoginData"
+import { useNavigate } from "react-router-dom";
 import { userDataContext } from "../Context/userDataContext";
-import { getUserLogin, getUserRegister } from "../service/ApiUsers";
-import { getPostFreelancerData } from "../service/ApiFreelancers";
 import { freelanceContext } from "../Context/frelanceContext";
+import { getPostFreelancerData } from "../service/ApiFreelancers";
+import { getUserLogin, getUserRegister } from "../service/ApiUsers";
+import LoginData from "./LoginData"
 
 
 function MainRegisterFreelance() {
     const contextUser = useContext(userDataContext);
+
+    const navigate = useNavigate();
 
     const contextFreelance = useContext(freelanceContext);
 
@@ -48,6 +51,7 @@ function MainRegisterFreelance() {
                 const token = solutionLogin.token;
                 await contextUser.setUserData(token);
                 localStorage.setItem("user", JSON.stringify(token));
+                navigate('/services')
             } else {
                 setErrorText("El registro se ha realizado correctamente pero no se ha podido iniciar sesión. Por favor acuda a la página de login para iniciar sesión")
             }

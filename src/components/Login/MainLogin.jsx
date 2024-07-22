@@ -1,11 +1,12 @@
 
 import { useState, useContext } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { userDataContext } from "../Context/userDataContext.jsx";
 import { getUserLogin } from "../service/ApiUsers.jsx";
 
 
 function MainLogin({ userType }) {
+    const navigat = useNavigate();
 
     const context = useContext(userDataContext)
 
@@ -16,7 +17,7 @@ function MainLogin({ userType }) {
 
     const [empty, setEmpty] = useState("")
 
-    const handleClick = async (ev) => {
+    const handleSubmit = async (ev) => {
         ev.preventDefault();
         if (userData) {
 
@@ -26,9 +27,10 @@ function MainLogin({ userType }) {
             console.log(solutionLogin);
 
             if (solutionLogin.success) {
-                const token = solutionLogin.token;
+                const token = await solutionLogin.token;
                 await context.setUserData(token);
                 localStorage.setItem("user", JSON.stringify(token));
+                navigat('/services');
             } else {
                 setEmpty(`No se ha podido iniciar sesión porque ${solutionLogin.message}`);
             }
@@ -61,7 +63,7 @@ function MainLogin({ userType }) {
 
             <p>{empty}</p>
 
-            <form onClick={handleClick}>
+            <form onSubmit={handleSubmit}>
 
                 <input onChange={handleChange} type="email" name="email" placeholder="Email" />
                 <input onChange={handleChange} type="password" name="password" placeholder="Contraseña" />
