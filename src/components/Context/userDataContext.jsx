@@ -6,8 +6,22 @@ import { createContext } from "react";
 export const userDataContext = createContext();
 
 export const useUserDataContext = () => {
+    const initial_state_userReg = {
+        name: "",
+        email: "",
+        password: ""
+    }
 
-    const [userData, setUserData] = useState([]);
+    const [userData, setUserData] = useState(null);
 
-    return { userData, setUserData };
+    const useRegisterToLogin = (emailVar, passwordVar) => {
+        const loginUser = {
+            email: emailVar,
+            password: passwordVar,
+        }
+
+        return loginUser
+    }
+
+    return { userData, setUserData, initial_state_userReg, useRegisterToLogin };
 };

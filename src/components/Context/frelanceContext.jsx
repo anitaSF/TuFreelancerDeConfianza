@@ -11,6 +11,8 @@ export const useFreelanceContext = () => {
 
     const [listFreelancer, setListFreelancer] = useState([]);
 
+    const [userFreelancer, setUserFreelancer] = useState();
+
     const [categoryFree, setCategoryFree] = useState([
         'Tu Manitas de confianza',
         'Tu Cuidador de confianza',
@@ -20,6 +22,7 @@ export const useFreelanceContext = () => {
         'Tu Auxiliar de confianza'
     ]);
 
+
     const [categorySelected, setCategorySelected] = useState('');
 
     useEffect(() => {
@@ -28,5 +31,6 @@ export const useFreelanceContext = () => {
             .catch(error => console.error('Error in useEffect: ', error));
     }, []);
 
-    return { listFreelancer, setListFreelancer, categoryFree, setCategoryFree, categorySelected, setCategorySelected };
+    return { listFreelancer, setListFreelancer, categoryFree, setCategoryFree, categorySelected, setCategorySelected, setUserFreelancer, userFreelancer };
+
 };

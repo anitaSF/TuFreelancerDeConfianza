@@ -3,6 +3,7 @@ function LoginData() {
     return (
         <>
             <fieldset>
+                <legend>Datos Personales</legend>
                 <label htmlFor="name">Nombre y </label><label htmlFor="surname">Apellido</label>
                 <input type="text" name="name" id="name" placeholder="Nombre" />
 
@@ -16,10 +17,6 @@ function LoginData() {
                 </div>
                 <div>
                     <input type="password" name="password" id="password" placeholder="Contraseña" />
-                </div>
-                <div>
-                    <label htmlFor="image">Añade tu foto de perfil: </label>
-                    <input type="text" name="image" id="image" placeholder="imagen" />
                 </div>
             </fieldset>
 
