@@ -1,4 +1,4 @@
-export default function MainProfile() {
+
     return (
         <main>
             <article>
@@ -32,7 +32,7 @@ export default function MainProfile() {
             <article>
                 <form action="">
                     <button>Editar perfil</button>
-                    <button>Eliminar perfil</button>
+                    <button onClick={handleProfileDeletion}>Eliminar perfil</button>
                 </form>
             </article>
         </main>
