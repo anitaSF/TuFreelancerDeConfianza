@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { freelanceContext } from "../Context/frelanceContext";
 import bgHeader from "../../images/bg-header.webp";
 
+
 import { Link } from "react-router-dom";
 
 function HeaderFreelanceList() {

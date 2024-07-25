@@ -35,6 +35,8 @@ function MainLogin({ userType }) {
                 await context.setUserData(token);
                 localStorage.setItem("user", JSON.stringify(token));
 
+                localStorage.setItem("email", JSON.stringify(userData.email));
+
                 if (userType === 'customerRegister') {
                     navigat('/services');
 

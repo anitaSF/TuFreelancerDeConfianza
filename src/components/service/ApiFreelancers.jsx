@@ -24,7 +24,18 @@ const getFreelancersData = async () => {
 
 };
 
-
+async function getOneFreelancer(userId) {
+    try {
+        const solution = await fetch(`https://6691899d26c2a69f6e900f96.mockapi.io/api/frelance/user/${userId}`, {
+            method: 'GET',
+            headers: { 'content-type': 'application/json' },
+        });
+        const solutionData = await solution.json();
+        return solutionData
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 async function getPostFreelancerData(userId) {
     try {
@@ -40,12 +51,12 @@ async function getPostFreelancerData(userId) {
     }
 }
 
-async function getPutFreelancerData(userId) {
+async function getPutFreelancerData(userId, varUpdate) {
     try {
-        const dataFetchApi = await fetch(`https://6691859c26c2a69f6e9001c5.mockapi.io/api/${userId}`, {
+        const dataFetchApi = await fetch(`https://6691899d26c2a69f6e900f96.mockapi.io/api/frelance/user/${userId}`, {
             method: 'PUT', // or PATCH
             headers: { 'content-type': 'application/json' },
-            body: JSON.stringify({ completed: true })
+            body: JSON.stringify(varUpdate)
         });
 
         const dataMenu = await dataFetchApi.json();
@@ -57,13 +68,17 @@ async function getPutFreelancerData(userId) {
 
 async function getRemoveFreelancer(userId) {
     try {
-        await fetch(`https://6691899d26c2a69f6e900f96.mockapi.io/api/frelance/${userId}`, {
+        const response = await fetch(`https://6691899d26c2a69f6e900f96.mockapi.io/api/frelance/user/${userId}`, {
             method: 'DELETE',
+            headers: { 'content-type': 'application/json' },
         });
+
+        const readResponse = response.json();
+        return readResponse;
     } catch (error) {
         console.log(error);
     }
 
 }
 
-export { getPostFreelancerData, getPutFreelancerData, getRemoveFreelancer, getFreelancersData }
+export { getPostFreelancerData, getPutFreelancerData, getRemoveFreelancer, getFreelancersData, getOneFreelancer }
