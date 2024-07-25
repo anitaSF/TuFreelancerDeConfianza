@@ -10,7 +10,7 @@ function HeaderLogin({ userType }) {
                     <h2 className="title-pag"><span>❮</span> Login</h2>
                 </Link>
                 <Link to="/info" state="/">
-                    <img src={infoLog} alt="información" />
+                    <h2 className="title-pag"><span className="big-icon">ⓘ</span></h2>
                 </Link>
             </nav>
         </header>

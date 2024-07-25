@@ -6,16 +6,27 @@ header {
     justify-content: center;
     padding: 20px;
 
-    .title-pag {
-        color: white;
-        font-size: $font-dest;
-        font-weight: $medium;
-        margin-bottom: 10px;
+    nav {
+        display: flex;
+        justify-content: space-between;
 
-        span {
-            margin-right: 10px;
+        .title-pag {
+            color: white;
+            font-size: $font-dest;
+            font-weight: $medium;
+            margin-bottom: 10px;
+
+            span {
+                margin-right: 10px;
+            }
+
+            .big-icon {
+                font-size: 20px;
+            }
         }
     }
+
+
 
 }
 
@@ -35,4 +46,16 @@ header {
     background-color: $manitasColor;
     width: 100%;
     height: 200px;
+}
+
+@media (min-width: 1026px) {
+    header {
+        nav {
+            .title-pag {
+                .big-icon {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
 }
