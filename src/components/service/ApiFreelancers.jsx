@@ -57,9 +57,13 @@ async function getPutFreelancerData(userId) {
 
 async function getRemoveFreelancer(userId) {
     try {
-        await fetch(`https://6691899d26c2a69f6e900f96.mockapi.io/api/frelance/${userId}`, {
+        const response = await fetch(`https://6691899d26c2a69f6e900f96.mockapi.io/api/frelance/user/${userId}`, {
             method: 'DELETE',
+            headers: { 'content-type': 'application/json' },
         });
+
+        const readResponse = response.json();
+        return readResponse;
     } catch (error) {
         console.log(error);
     }
