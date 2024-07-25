@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { freelanceContext } from "../Context/frelanceContext";
 import { getRemoveFreelancer } from "../service/ApiFreelancers";
 import TFCcv from "../../images/TFC-cv.png";
@@ -86,14 +86,16 @@ export default function MainProfile() {
             </article>
             <article>
                 <a href="rutaDelArchivo" download="curriculumFreelancer">
-                    <img src={TFCcv} alt="" />
+                    <img src="" alt="" />
                     <p>Ver CV adjunto</p>
                 </a>
             </article>
             {/* los botones deberían ir en otro componente con su lógica */}
             <article>
                 <div>
-                    <button>Editar perfil</button>
+                    <Link to='/yourProfile/editProfile'>
+                        <button>Editar perfil</button>
+                    </Link>
                     <button type="button" onClick={() => { handleDeleteProfile() }}>Eliminar perfil</button>
                 </div>
             </article>

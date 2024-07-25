@@ -15,6 +15,7 @@ import FreelanceRegister from "./pages/logAndRegister/FreelanceRegister";
 import CustomerRegister from "./pages/logAndRegister/CustomerRegister";
 import LoginFree from "./pages/logAndRegister/LoginFree";
 import InfoFree from "./pages/InfoFree";
+import EditForm from "./pages/EditForm";
 //import AuthRoute from "./Auth/AuthRoute";
 
 function App() {
@@ -34,8 +35,9 @@ function App() {
           <Route path="/services" element={<SearchService />} /> {/* <AuthRoute component={<SearchService />} /> */}
           <Route path="/freelancers" element={<SelectedService />} /> {/* <AuthRoute component={<SelectedService />} /> */}
           <Route path="/freelancers/:idFreelancer" element={<Details />} /> {/* <AuthRoute component={<Details />} /> */}
-
           <Route path="/info" element={<InfoFree />} /> {/* <AuthRoute component={<InfoFree />} /> */}
+          <Route path="/yourProfile/editProfile" element={<EditForm />}></Route>{/* <AuthRoute component={<EditForm />} /> */}
+
         </Routes>
       </userDataContext.Provider>
     </freelanceContext.Provider>
