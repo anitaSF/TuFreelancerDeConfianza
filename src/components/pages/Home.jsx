@@ -1,27 +1,33 @@
 import { Link } from "react-router-dom";
+import logo from "../../images/TFC-logo.webp"
+import bgImage from '../../images/TFC-bg-clientes.webp';
 
 export default function Home() {
   return (
-    <div>
+    <main style={{ backgroundImage: `url(${bgImage})` }}>
+      <section className="home">
+        <h1><img className="logo" src={logo} /></h1>
+        <div className="tipo-user">
+          <p className="text-home">¿Que tipo de usuario eres?</p>
+          <div className="block-login">
+            <button className="btn-clientes">
+              <Link className="link" to="/customerLogin" state="customerRegister">
+                Login Clientes
+              </Link>
+            </button>
 
-      <h1>Tu freelancer de confianza</h1>
+            <button className="btn-freelancer">
+              <Link className="link" to="/freelanceLogin" state="freelancerRegister">
+                Login Freenlancers
+              </Link>
+            </button>
+          </div>
+        </div>
 
-      <p>¿Que tipo de usuario eres?</p>
+      </section>
 
 
-      <Link to="/customerLogin" state="customerRegister">
-        <button>
-          Login Clientes
-        </button>
-      </Link>
-
-      <Link to="/freelanceLogin" state="freelancerRegister">
-        <button>
-          Login Freenlancers
-        </button>
-      </Link>
-
-    </div>
+    </main >
   )
 }
 

@@ -2,7 +2,7 @@ import { useContext, useState } from "react"
 import { useNavigate } from "react-router-dom";
 import { userDataContext } from "../Context/userDataContext"
 import { getUserLogin, getUserRegister } from "../service/ApiUsers";
-import LoginData from "./LoginData"
+import LoginData from "./LoginData";
 
 
 function MainRegisterCustomer() {
@@ -53,13 +53,19 @@ function MainRegisterCustomer() {
 
     return (
         <main>
-            <h1>¡Hola!</h1>
-            <h2>Si eres <strong>Cliente</strong>, regístrate aquí</h2>
-            <p className="errorText">{errorText}</p>
-            <form onChange={handleChange} onSubmit={handleSubmit}>
-                <LoginData />
-                <button type="submit">Registrarme</button>
-            </form>
+            <section className="body">
+                <h2 className="dest-customer title">¡Hola!</h2>
+                <p className="text-center">
+                    Si eres <strong> Cliente</strong>, regístrate aquí
+                </p>
+
+                <p className="errorText">{errorText}</p>
+
+                <form className="margin-med" onChange={handleChange} onSubmit={handleSubmit}>
+                    <LoginData />
+                    <button className="btn-clientes" type="submit">Registrarme</button>
+                </form>
+            </section>
         </main>
     )
 }

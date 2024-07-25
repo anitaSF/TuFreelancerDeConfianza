@@ -4,7 +4,7 @@ import { userDataContext } from "../Context/userDataContext";
 import { freelanceContext } from "../Context/frelanceContext";
 import { getPostFreelancerData } from "../service/ApiFreelancers";
 import { getUserLogin, getUserRegister } from "../service/ApiUsers";
-import LoginData from "./LoginData"
+import LoginData from "./LoginData";
 
 
 function MainRegisterFreelance() {
@@ -63,55 +63,64 @@ function MainRegisterFreelance() {
     }
 
     return (
-        <main className="container">
-            <h1>¡Hola!</h1>
-            <h2>Si eres <strong>Freelancer</strong>, regístrate aquí</h2>
-            <p className="errorText">{errorText}</p>
-            <form onChange={handleChange} onSubmit={handleSubmit}>
-                <LoginData />
-                <fieldset>
-                    <legend>Datos profesionales</legend>
-                    <div>
-                        <label htmlFor="category">¿Qué tipo de freelancer eres?</label>
-                        <select name="category" id="category">
-                            <option value="">Selecciona una opción</option>
-                            <option value="Tu Cuidador de confianza">Cuidador</option>
-                            <option value="Tu Informático de confianza">Informático</option>
-                            <option value="Tu Canguro de confianza">Canguro</option>
-                            <option value="Tu Profesor de confianza">Profesor</option>
-                            <option value="Tu Manitas de confianza">Manitas</option>
-                            <option value="Tu Auxiliar de confianza">Auxiliar</option>
-                            <option value="Tu Técnico de confianza">Técnico</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label htmlFor="img"></label>
-                        <input type="text" name="img" id="img" placeholder="Añade el url de una foto tuya" />
-                    </div>
-                    <div>
-                        <label htmlFor="title">Titulación</label>
-                        <input type="text" name="title" id="title" placeholder="Indica tu titulación" />
-                    </div>
-                    <div>
-                        <label htmlFor="budget">Presupuesto</label>
-                        <input type="num" name="budget" id="budget" placeholder="€/hora" />
-                    </div>
-                    <div>
-                        <label htmlFor="location">Ubicación de trabajo</label>
-                        <input type="text" name="location" id="location" placeholder="Indica tu disposición geográfica" />
-                    </div>
-                    <div>
-                        <label htmlFor="description">Presentación</label>
-                        <textarea type="text" name="description" id="description" placeholder="Escribe tu carta de presentación" /></div>
-                    <div>
-                        <label htmlFor="cv">Indica la dirección web de tu curriculum</label>
-                        <input type="text" name="cv" id="cv" placeholder="Añadir curriculum" />
-                    </div>
-                </fieldset>
-                <div>
-                    <button type="submit">Regístrarme</button>
-                </div>
-            </form>
+        <main>
+            <section className="body">
+                <h2 className="dest-freelancer title">¡Hola!</h2>
+                <p className="text-center">
+                    Si eres <strong>Freelancer</strong>, regístrate aquí
+                </p>
+                <p className="errorText">{errorText}</p>
+                <form className="margin-med" onChange={handleChange} onSubmit={handleSubmit}>
+                    <LoginData />
+                    <hr />
+                    <fieldset className="datos-prof">
+                        <legend className=""><strong>Datos profesionales</strong></legend>
+                        <fieldset>
+                            <label className="m-right p-top" htmlFor="category">¿Qué tipo de freelancer eres?</label>
+                            <select name="category" id="category">
+                                <option value="">Selecciona una opción</option>
+                                <option value="Tu Cuidador de confianza">Cuidador</option>
+                                <option value="Tu Informático de confianza">Informático</option>
+                                <option value="Tu Canguro de confianza">Canguro</option>
+                                <option value="Tu Profesor de confianza">Profesor</option>
+                                <option value="Tu Manitas de confianza">Manitas</option>
+                                <option value="Tu Auxiliar de confianza">Auxiliar</option>
+                                <option value="Tu Técnico de confianza">Técnico</option>
+                            </select>
+                        </fieldset>
+
+                        <fieldset className="no-margin">
+                            <label className="m-right p-top" htmlFor="img">Foto de perfil</label>
+                            <input type="text" name="img" id="img" placeholder="Añade el url de una foto tuya" />
+                        </fieldset>
+                        <fieldset>
+                            <div className="row m-right m-bottom">
+                                <label htmlFor="title">Titulación</label>
+                                <input type="text" name="title" id="title" placeholder="Indica tu titulación" />
+                            </div>
+                            <div className="row">
+                                <label htmlFor="cv">Indica la url de tu curriculum</label>
+                                <input type="text" name="cv" id="cv" placeholder="Añadir curriculum" />
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <div className="row m-right m-bottom">
+                                <label htmlFor="budget">Presupuesto</label>
+                                <input type="num" name="budget" id="budget" placeholder="€/hora" />
+                            </div>
+                            <div className="row">
+                                <label htmlFor="location">Ubicación de trabajo</label>
+                                <input type="text" name="location" id="location" placeholder="Indica tu disposición geográfica" />
+                            </div>
+                        </fieldset>
+                        <fieldset className="datos-prof no-margin">
+                            <label htmlFor="description">Presentación</label>
+                            <textarea type="text" name="description" id="description" placeholder="Escribe tu carta de presentación" />
+                        </fieldset>
+                    </fieldset>
+                    <button className="btn-freelancer" type="submit">Regístrarme</button>
+                </form>
+            </section>
         </main>
     )
 }

@@ -26,12 +26,33 @@ export const useFreelanceContext = () => {
 
     const [categorySelected, setCategorySelected] = useState('');
 
+    const [classSelected, setClassSelected] = useState('');
+
+    const changeClass = () => {
+        if (categorySelected === 'Tu Manitas de confianza') {
+            setClassSelected('manitas');
+        } else if (categorySelected === 'Tu Cuidador de confianza') {
+            setClassSelected('cuidador');
+        } else if (categorySelected === 'Tu Profesor de confianza') {
+            setClassSelected('profesor');
+        } else if (categorySelected === 'Tu Técnico de confianza') {
+            setClassSelected('tecnico');
+        } else if (categorySelected === 'Tu Canguro de confianza') {
+            setClassSelected('canguro');
+        } else if (categorySelected === 'Tu Auxiliar de confianza') {
+            setClassSelected('auxiliar');
+        } else if (categorySelected === 'Tu Informático de confianza') {
+            setClassSelected('informatico');
+        }
+    };
+
+
     useEffect(() => {
         getFreelancersData()
             .then(data => setListFreelancer(data))
             .catch(error => console.error('Error in useEffect: ', error));
     }, []);
 
-    return { listFreelancer, setListFreelancer, categoryFree, setCategoryFree, categorySelected, setCategorySelected, setUserFreelancer, userFreelancer };
+    return { listFreelancer, setListFreelancer, categoryFree, setCategoryFree, categorySelected, setCategorySelected, setUserFreelancer, userFreelancer, classSelected, changeClass };
 
 };
