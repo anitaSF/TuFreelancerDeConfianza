@@ -1,12 +1,16 @@
-import HeaderLogin from "../../Login/HeaderLogin"
+import { useLocation } from 'react-router-dom';
+
+import HeaderRegisterCustomer from "../../Register/HeaderRegisterCustomer"
 import MainRegisterCustomer from "../../Register/MainRegisterCustomer"
 
 
 function CustomerRegister() {
+  const location = useLocation();
+  const userType = location.state;
   return (
     <>
-      <HeaderLogin />
-      <MainRegisterCustomer />
+      <HeaderRegisterCustomer />
+      <MainRegisterCustomer userType={userType} />
     </>
   )
 }

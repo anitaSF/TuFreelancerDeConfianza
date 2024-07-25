@@ -1,0 +1,38 @@
+header {
+    width: 100%;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+
+    .title-pag {
+        color: white;
+        font-size: $font-dest;
+        font-weight: $medium;
+        margin-bottom: 10px;
+
+        span {
+            margin-right: 10px;
+        }
+    }
+
+}
+
+.bg-freelancer {
+    background-color: $secondaryColor;
+}
+
+.customerRegister {
+    background-color: $primaryColor;
+}
+
+.freelancerRegister {
+    background-color: $secondaryColor;
+}
+
+.manitas {
+    background-color: $manitasColor;
+    width: 100%;
+    height: 200px;
+}

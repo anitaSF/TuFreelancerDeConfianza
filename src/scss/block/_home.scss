@@ -1,0 +1,54 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 30px 0;
+    min-height: 100vh;
+
+    .logo {
+        max-width: 250px;
+        height: auto;
+    }
+
+    .tipo-user {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        .text-home {
+            font-size: $font-dest;
+            color: $lightColor;
+            font-weight: $regular;
+            margin-bottom: 30px;
+            position: relative;
+            bottom: 0;
+        }
+
+        .block-login {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+
+            button {
+                min-width: 300px;
+            }
+        }
+    }
+}
+
+@media (min-width: 1026px) {
+    .home {
+        .logo {
+            max-width: 300px;
+        }
+
+        .tipo-user {
+            .block-login {
+                flex-direction: row;
+            }
+        }
+    }
+}

@@ -12,7 +12,7 @@ function MainFreelancersList() {
 
     return (
         <>
-            <article>
+            <article className={context.categorySelected}>
                 <ul>
                     {filteredFreelancers.map((freelancer) => (
                         <li key={freelancer.id}>

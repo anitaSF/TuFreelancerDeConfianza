@@ -5,6 +5,8 @@ import { userDataContext } from "../Context/userDataContext.jsx";
 import { freelanceContext } from "../Context/frelanceContext.jsx";
 import { getUserLogin } from "../service/ApiUsers.jsx";
 
+import icono from "../../images/TFC-ico.webp";
+
 
 function MainLogin({ userType }) {
     const navigat = useNavigate();
@@ -80,36 +82,42 @@ function MainLogin({ userType }) {
     }
 
     return (
-        <main className={userType}>
-            <h2>¡BIENVENIDO!</h2>
+        <main>
+            <section className="body">
 
-            <img></img>
+                <h2 className={`${userType} title`} style={{ backgroundColor: '#fff' }}>¡Bienvenido!</h2>
 
-            <p>
-                Accede a la plataforma y encuentra <strong>Tu Freelancer de confianza</strong>
-            </p>
+                <p className="text-center">
+                    Accede a la plataforma y encuentra <strong className="block"> Tu Freelancer de confianza</strong>
+                </p>
+                <div>
+                    <img className={`${userType} icono`} src={icono} />
+                </div>
 
-            <p>{empty}</p>
+                <p>{empty}</p>
 
-            <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit}>
 
-                <input onChange={handleChange} type="email" name="email" placeholder="Email" />
-                <input onChange={handleChange} type="password" name="password" placeholder="Contraseña" />
-                <button type="submit">Acceder</button>
+                    <input className="field-login" onChange={handleChange} type="email" name="email" placeholder="Email" />
+                    <input className="field-login" onChange={handleChange} type="password" name="password" placeholder="Contraseña" />
+                    <button className={userType} style={{ color: '#fff' }} type="submit">Acceder</button>
 
-            </form>
-            <p>{empty}</p>
+                </form>
+                <p>{empty}</p>
 
-            {/* aquí hay que ponerle una funcionalidad y vrear más paginas No merece la pena añadirlo
+                {/* aquí hay que ponerle una funcionalidad y vrear más paginas No merece la pena añadirlo
             <p>Olvidaste tu contraseña</p>
             */}
 
-
-            <p>¿Todavia no tienes una cuenta?</p>
-            <Link to={`/${userType}`}>
-                <p>Regístrate</p>
-            </Link>
-        </main>
+                <div>
+                    <span className="text-small">¿Todavia no tienes una cuenta?
+                    </span>
+                    <Link className={`${userType} link-form`} style={{ backgroundColor: '#fff' }} to={`/${userType}`}>
+                        Regístrate
+                    </Link>
+                </div>
+            </section>
+        </main >
     )
 }
 

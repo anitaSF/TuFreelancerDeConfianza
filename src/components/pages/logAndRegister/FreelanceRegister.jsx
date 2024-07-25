@@ -1,12 +1,14 @@
-import HeaderLogin from "../../Login/HeaderLogin"
-import MainRegisterFreelance from "../../Register/MainRegisterFreelance"
+import HeaderRegisterFree from "../../Register/HeaderRegisterFree";
+import MainRegisterFreelance from "../../Register/MainRegisterFreelance";
+
 
 function FreelanceRegister() {
+
     return (
-        <div>
-            <HeaderLogin />
+        <>
+            <HeaderRegisterFree />
             <MainRegisterFreelance />
-        </div>
+        </>
     )
 }
 
