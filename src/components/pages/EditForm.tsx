@@ -37,10 +37,6 @@ function EditForm() {
                     <fieldset>
                         <legend>Datos profesionales</legend>
                         <div>
-                            <label htmlFor="category">Indica tu nuevo tipo de freelancer</label>
-                            <input type="text" name='category' id='category' onChange={handleChange} defaultValue={context.userFreelancer.category} />
-                        </div>
-                        <div>
                             <label htmlFor="img">Añade el url de tu nueva foto de perfil</label>
                             <input type="text" name='img' id='img' onChange={handleChange} defaultValue={context.userFreelancer.img} />
                         </div>
