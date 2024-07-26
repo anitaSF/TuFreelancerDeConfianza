@@ -83,6 +83,7 @@
         button {
             margin-top: 40px;
             min-width: 350px;
+            max-width: 400px;
             color: $lightColor;
 
             a {
@@ -96,10 +97,13 @@
         flex-direction: column;
         justify-content: space-around;
         padding-top: 20px;
+        text-align: center;
+        margin: 0 auto;
 
         .edit-btn {
             margin: 10px;
             min-width: 350px;
+            max-width: 400px;
             color: $lightColor;
             background-color: $secondaryColor;
 
@@ -173,9 +177,6 @@
             }
         }
 
-        .edit-detail {
-            flex-direction: row;
-            justify-content: space-around;
-        }
+
     }
 }

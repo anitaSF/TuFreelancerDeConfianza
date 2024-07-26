@@ -325,10 +325,12 @@ form button {
   margin-top: 40px;
   width: 100%;
   font-family: "Poppins", Helvetica, "Segoe UI", Tahoma, Arial, sans-serif;
+  color: white;
 }
 form .cancel-edit {
   border: 0;
   background-color: transparent;
+  margin-top: 0px;
 }
 form .cancel-edit a {
   color: rgb(212, 46, 17);
@@ -558,6 +560,7 @@ form .m-bottom {
 .free-detail .contact-detail button {
   margin-top: 40px;
   min-width: 350px;
+  max-width: 400px;
   color: white;
 }
 .free-detail .contact-detail button a {
@@ -568,10 +571,13 @@ form .m-bottom {
   flex-direction: column;
   justify-content: space-around;
   padding-top: 20px;
+  text-align: center;
+  margin: 0 auto;
 }
 .free-detail .edit-detail .edit-btn {
   margin: 10px;
   min-width: 350px;
+  max-width: 400px;
   color: white;
   background-color: #FFBF00;
 }
@@ -625,10 +631,6 @@ form .m-bottom {
   .free-detail .datos-freelancer .text-detail .budget-detail {
     font-size: 1.75rem;
     margin-top: 10px;
-  }
-  .free-detail .edit-detail {
-    flex-direction: row;
-    justify-content: space-around;
   }
 }
 * {
