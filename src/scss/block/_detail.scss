@@ -68,6 +68,22 @@
         transition: all 0.3s;
     }
 
+    .contact-detail {
+        text-align: center;
+        margin: 0 auto;
+
+        button {
+            margin-top: 40px;
+            min-width: 350px;
+
+            a {
+                color: $lightColor;
+            }
+        }
+    }
+
+
+
     .manitas {
         color: $manitasColor;
     }

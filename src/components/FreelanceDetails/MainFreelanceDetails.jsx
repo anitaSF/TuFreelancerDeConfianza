@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { freelanceContext } from "../Context/frelanceContext";
-
+import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 function MainFreelanceDetails() {
@@ -37,6 +37,11 @@ function MainFreelanceDetails() {
                             <div className="cv-detail">
                                 <a className={`${context.classSelected} icon-cv`} style={{ backgroundColor: '#fff' }} href={findFreelancer.cv}>㏌</a>
                                 <a className={context.classSelected} style={{ backgroundColor: '#fff' }} href={findFreelancer.cv}>Ver Perfil Linkedin</a>
+                            </div>
+                            <div className="contact-detail">
+                                <button className={context.classSelected} >
+                                    <a href={`mailto:${findFreelancer.email}`}>Contactar</a>
+                                </button>
                             </div>
                         </>
                     ) : (

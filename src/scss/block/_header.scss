@@ -9,6 +9,7 @@ header {
     nav {
         display: flex;
         justify-content: space-between;
+        align-items: center;
 
         .title-pag {
             color: $lightColor;
@@ -23,6 +24,15 @@ header {
             .big-icon {
                 font-size: 20px;
             }
+        }
+
+        .title-perfil {
+            color: $lightColor;
+            font-size: $font-headline-min;
+        }
+
+        .info {
+            color: $lightColor;
         }
     }
 

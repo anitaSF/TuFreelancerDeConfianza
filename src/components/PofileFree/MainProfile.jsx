@@ -2,7 +2,6 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { freelanceContext } from "../Context/frelanceContext";
 import { getRemoveFreelancer } from "../service/ApiFreelancers";
-import TFCcv from "../../images/TFC-cv.png";
 
 export default function MainProfile() {
     const context = useContext(freelanceContext);
@@ -67,38 +66,40 @@ export default function MainProfile() {
 
     return (
         <main>
-            <article>
-                <figure>
-                    <img src={context.userFreelancer.img} alt={context.userFreelancer.name} />
-                </figure>
-                <h3>{context.userFreelancer.name}</h3>
-                <h4>{context.userFreelancer.surname}</h4>
-                <p>{context.userFreelancer.location}</p>
-                <p>{context.userFreelancer.budget}</p>
-            </article>
-            <article>
-                <h3>Titulación</h3>
-                <p>{context.userFreelancer.title}</p>
-            </article>
-            <article>
-                <h3>Presentación</h3>
-                <p>{context.userFreelancer.description}</p>
-            </article>
-            <article>
-                <a href="rutaDelArchivo" download="curriculumFreelancer">
-                    <img src="" alt="" />
-                    <p>Ver CV adjunto</p>
-                </a>
-            </article>
-            {/* los botones deberían ir en otro componente con su lógica */}
-            <article>
-                <div>
-                    <Link to='/yourProfile/editProfile'>
-                        <button>Editar perfil</button>
-                    </Link>
-                    <button type="button" onClick={() => { handleDeleteProfile() }}>Eliminar perfil</button>
-                </div>
-            </article>
+            <section className="body">
+                <article>
+                    <figure>
+                        <img src={context.userFreelancer.img} alt={context.userFreelancer.name} />
+                    </figure>
+                    <h3>{context.userFreelancer.name}</h3>
+                    <h4>{context.userFreelancer.surname}</h4>
+                    <p>{context.userFreelancer.location}</p>
+                    <p>{context.userFreelancer.budget}</p>
+                </article>
+                <article>
+                    <h3>Titulación</h3>
+                    <p>{context.userFreelancer.title}</p>
+                </article>
+                <article>
+                    <h3>Presentación</h3>
+                    <p>{context.userFreelancer.description}</p>
+                </article>
+                <article>
+                    <a href="rutaDelArchivo" download="curriculumFreelancer">
+                        <img src="" alt="" />
+                        <p>Ver CV adjunto</p>
+                    </a>
+                </article>
+                {/* los botones deberían ir en otro componente con su lógica */}
+                <article>
+                    <div>
+                        <Link to='/yourProfile/editProfile'>
+                            <button>Editar perfil</button>
+                        </Link>
+                        <button type="button" onClick={() => { handleDeleteProfile() }}>Eliminar perfil</button>
+                    </div>
+                </article>
+            </section>
         </main>
     )
 }
