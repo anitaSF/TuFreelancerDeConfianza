@@ -37,6 +37,10 @@
                 font-size: 1.75rem;
                 margin-top: 10px;
             }
+
+            .freelancer-dest {
+                color: $secondaryColor;
+            }
         }
     }
 
@@ -61,6 +65,10 @@
         .icon-cv {
             font-size: 40px;
         }
+
+        .link-cv {
+            color: $secondaryColor;
+        }
     }
 
     .cv-detail a:hover {
@@ -75,6 +83,8 @@
         button {
             margin-top: 40px;
             min-width: 350px;
+            max-width: 400px;
+            color: $lightColor;
 
             a {
                 color: $lightColor;
@@ -82,7 +92,36 @@
         }
     }
 
+    .edit-detail {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding-top: 20px;
+        text-align: center;
+        margin: 0 auto;
 
+        .edit-btn {
+            margin: 10px;
+            min-width: 350px;
+            max-width: 400px;
+            color: $lightColor;
+            background-color: $secondaryColor;
+
+            a {
+                color: $lightColor;
+            }
+        }
+
+        .delete-btn {
+            color: rgb(212, 46, 17);
+            border: 0;
+            background-color: transparent;
+
+            span {
+                text-decoration: underline;
+            }
+        }
+    }
 
     .manitas {
         color: $manitasColor;
@@ -137,5 +176,7 @@
                 }
             }
         }
+
+
     }
 }

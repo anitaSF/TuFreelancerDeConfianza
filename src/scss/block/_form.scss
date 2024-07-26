@@ -79,6 +79,19 @@ form {
         margin-top: 40px;
         width: 100%;
         font-family: $font-type;
+        color: $lightColor;
+
+    }
+
+    .cancel-edit {
+        border: 0;
+        background-color: transparent;
+        margin-top: 0px;
+
+        a {
+            color: rgb(212, 46, 17);
+            text-decoration: underline;
+        }
     }
 
     .p-top {
