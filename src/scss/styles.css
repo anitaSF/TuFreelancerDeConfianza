@@ -1,4 +1,51 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.customerRegister {
+  background-color: #068086;
+}
+
+.btn-clientes {
+  background-color: #068086;
+  color: white;
+}
+.btn-clientes .link {
+  color: white;
+}
+
+.freelancerRegister {
+  background-color: #FFBF00;
+}
+
+.btn-freelancer {
+  background-color: #FFBF00;
+}
+.btn-freelancer .link {
+  color: black;
+}
+
+.manitas {
+  background-color: #FFAA06;
+}
+
+.cuidador {
+  background-color: #1C694D;
+}
+
+.profesor {
+  background-color: #6750A4;
+}
+
+.tecnico {
+  background-color: #1692C7;
+}
+
+.canguro {
+  background-color: #89B729;
+}
+
+.auxiliar {
+  background-color: #E33A58;
+}
+
 header {
   width: 100%;
   min-height: 150px;
@@ -7,30 +54,42 @@ header {
   justify-content: center;
   padding: 20px;
 }
-header .title-pag {
+header nav {
+  display: flex;
+  justify-content: space-between;
+}
+header nav .title-pag {
   color: white;
   font-size: 1.25rem;
   font-weight: 500;
   margin-bottom: 10px;
 }
-header .title-pag span {
+header nav .title-pag span {
   margin-right: 10px;
 }
-
-.customerRegister {
-  background-color: #068086;
+header nav .title-pag .big-icon {
+  font-size: 20px;
+}
+header .head-services {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 220px;
+}
+header .head-services .logo-services {
+  max-width: 220px;
+  margin-bottom: 10px;
+}
+header .head-services .info {
+  color: white;
 }
 
-.freelancerRegister {
-  background-color: #FFBF00;
+@media (min-width: 1026px) {
+  header nav .title-pag .big-icon {
+    font-size: 30px;
+  }
 }
-
-.manitas {
-  background-color: #FFAA06;
-  width: 100%;
-  height: 200px;
-}
-
 main {
   margin: 0 auto;
   display: flex;
@@ -39,24 +98,14 @@ main {
   flex-wrap: wrap;
   max-width: 100%;
   min-height: 100vh;
+  /* Section style */
+  /* Text style */
+  /* Button styles */
+  /* Spaces styles */
 }
 main section {
   width: 100%;
   margin: 0 auto;
-}
-main p {
-  font-size: 1.1rem;
-}
-main strong {
-  font-weight: 700;
-}
-main button {
-  display: block;
-  margin: 10px;
-  padding: 10px 30px;
-  font-size: 1rem;
-  border: 0;
-  border-radius: 10px;
 }
 main .body {
   border-radius: 20px;
@@ -69,10 +118,22 @@ main .body {
   align-items: center;
   justify-content: space-around;
 }
+main p {
+  font-size: 1.1rem;
+}
+main strong {
+  font-weight: 700;
+}
 main .title {
   font-size: 2rem;
   font-weight: 700;
   margin: 20px 0;
+}
+main .subtitle {
+  font-size: 1.5rem;
+  line-height: 1.7rem;
+  font-weight: 500;
+  color: #068086;
 }
 main .text-small {
   font-size: 0.9rem;
@@ -88,24 +149,46 @@ main .dest-freelancer {
 main .text-center {
   text-align: center;
 }
-main .block {
+main .subtitle-info {
+  color: #068086;
+  font-weight: 500;
+  font-size: 1.35rem;
+  margin: 10px 0 5px 0;
+}
+main .lineheight-min {
+  line-height: 1.5rem;
+}
+main .bullet {
+  list-style: circle;
+  padding: 8px 30px;
+}
+main button {
   display: block;
+  margin: 10px;
+  padding: 10px 30px;
+  font-size: 1rem;
+  border: 0;
+  border-radius: 10px;
 }
 main .margin-med {
   margin: 30px 0;
 }
-main .btn-clientes {
-  background-color: #068086;
-  color: white;
+main .margin-small {
+  margin: 10px 0;
 }
-main .btn-clientes .link {
-  color: white;
+main .block {
+  display: block;
 }
-main .btn-freelancer {
-  background-color: #FFBF00;
+main .separador-large {
+  border: 1px solid #068086;
+  width: 100%;
+  margin: 20px 0;
 }
-main .btn-freelancer .link {
-  color: black;
+main .separador-small {
+  border: 1px solid #FFBF00;
+  width: 30%;
+  margin: 20px 0;
+  text-align: center;
 }
 
 .home {
@@ -174,12 +257,25 @@ form {
   justify-content: space-around;
   align-items: center;
   width: 80%;
+  margin: 0 auto;
 }
 form fieldset {
   border: 0;
   margin: 10px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
-form input {
+form .no-margin {
+  margin: 0;
+}
+form label {
+  text-align: left;
+  margin-top: 10px;
+}
+form input,
+form textarea {
   width: 100%;
   height: 30px;
   border-radius: 10px;
@@ -187,18 +283,40 @@ form input {
   border: 1px solid #d3d3d3;
   margin: 10px 0;
 }
-form input::-moz-placeholder {
+form select {
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #d3d3d3;
+  font-family: "Poppins", Helvetica, "Segoe UI", Tahoma, Arial, sans-serif;
+  color: #777777;
+  margin: 10px 0;
+  padding: 10px 20px;
+}
+form input::-moz-placeholder, form textarea::-moz-placeholder {
   font-family: "Poppins", Helvetica, "Segoe UI", Tahoma, Arial, sans-serif;
   color: #777777;
 }
-form input::placeholder {
+form input::placeholder,
+form textarea::placeholder {
   font-family: "Poppins", Helvetica, "Segoe UI", Tahoma, Arial, sans-serif;
   color: #777777;
+}
+form hr {
+  border: 1px solid #FFBF00;
+  width: 100%;
+  margin: 20px 0;
 }
 form button {
   margin-top: 40px;
   width: 100%;
   font-family: "Poppins", Helvetica, "Segoe UI", Tahoma, Arial, sans-serif;
+}
+form .p-top {
+  padding-top: 0px;
+}
+form .m-bottom {
+  margin-bottom: 20px;
 }
 
 .link-form {
@@ -207,11 +325,69 @@ form button {
 }
 
 @media (min-width: 1026px) {
-  form input {
+  form fieldset {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  form .datos-prof {
+    flex-direction: column;
+  }
+  form .field-login {
     max-width: 400px;
+  }
+  form .row {
+    width: 100%;
+  }
+  form label {
+    white-space: nowrap;
   }
   form button {
     max-width: 400px;
+  }
+  form .m-right {
+    margin-right: 30px;
+  }
+  form .p-top {
+    padding-top: 10px;
+  }
+  form .m-bottom {
+    margin-bottom: 0px;
+  }
+}
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.intro .text-services {
+  text-align: center;
+  line-height: 1.4rem;
+  margin: 10px 0;
+}
+
+.services {
+  width: 100%;
+  padding: 10px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+.services .card {
+  padding: 10px;
+}
+.services .card .icono-service {
+  width: 80%;
+  margin: 5px;
+}
+
+@media (min-width: 1026px) {
+  .services {
+    padding: 30px 70px;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    grid-gap: 40px;
+  }
+  .services .card .icono-service {
+    width: 60%;
+    margin: 20px;
   }
 }
 * {

@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import infoLog from "../../images/info.png";
 
 export default function HeaderProfile() {
 
@@ -9,7 +8,7 @@ export default function HeaderProfile() {
             <h1>Tu perfil de Freelancer</h1>
             <h2> {"Catgoría"} Auxiliar de confianza</h2>
             <Link to="/info" state="/yourProfile">
-                <img src={infoLog} alt="info" />
+                <h2 className="info"><span className="big-icon">ⓘ</span></h2>
             </Link>
         </header>
     )

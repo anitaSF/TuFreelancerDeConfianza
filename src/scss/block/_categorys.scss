@@ -1,0 +1,48 @@
+.customerRegister {
+    background-color: $primaryColor;
+}
+
+.btn-clientes {
+    background-color: $primaryColor;
+    color: $lightColor;
+
+    .link {
+        color: $lightColor;
+    }
+}
+
+.freelancerRegister {
+    background-color: $secondaryColor;
+}
+
+.btn-freelancer {
+    background-color: $secondaryColor;
+
+    .link {
+        color: $darkColor;
+    }
+}
+
+.manitas {
+    background-color: $manitasColor;
+}
+
+.cuidador {
+    background-color: $cuidadorColor;
+}
+
+.profesor {
+    background-color: $profesorColor;
+}
+
+.tecnico {
+    background-color: $tecnicoColor;
+}
+
+.canguro {
+    background-color: $canguroColor;
+}
+
+.auxiliar {
+    background-color: $auxiliarColor;
+}
