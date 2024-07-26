@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import bgHeader from "../../images/bg-header.webp";
-import infoLog from "../../images/info.png";
 
 function HeaderLogin({ userType }) {
     return (
