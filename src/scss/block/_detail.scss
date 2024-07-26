@@ -37,6 +37,10 @@
                 font-size: 1.75rem;
                 margin-top: 10px;
             }
+
+            .freelancer-dest {
+                color: $secondaryColor;
+            }
         }
     }
 
@@ -61,6 +65,10 @@
         .icon-cv {
             font-size: 40px;
         }
+
+        .link-cv {
+            color: $secondaryColor;
+        }
     }
 
     .cv-detail a:hover {
@@ -75,6 +83,7 @@
         button {
             margin-top: 40px;
             min-width: 350px;
+            color: $lightColor;
 
             a {
                 color: $lightColor;
@@ -82,7 +91,22 @@
         }
     }
 
+    .edit-detail {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding-top: 20px;
 
+        button {
+            margin: 10px;
+            min-width: 350px;
+            color: $lightColor;
+
+            a {
+                color: $lightColor;
+            }
+        }
+    }
 
     .manitas {
         color: $manitasColor;
@@ -136,6 +160,11 @@
                     margin-top: 10px;
                 }
             }
+        }
+
+        .edit-detail {
+            flex-direction: row;
+            justify-content: space-around;
         }
     }
 }

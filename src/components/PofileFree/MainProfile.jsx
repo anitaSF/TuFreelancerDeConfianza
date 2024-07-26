@@ -67,36 +67,33 @@ export default function MainProfile() {
     return (
         <main>
             <section className="body">
-                <article>
-                    <figure>
-                        <img src={context.userFreelancer.img} alt={context.userFreelancer.name} />
-                    </figure>
-                    <h3>{context.userFreelancer.name}</h3>
-                    <h4>{context.userFreelancer.surname}</h4>
-                    <p>{context.userFreelancer.location}</p>
-                    <p>{context.userFreelancer.budget}</p>
-                </article>
-                <article>
-                    <h3>Titulación</h3>
-                    <p>{context.userFreelancer.title}</p>
-                </article>
-                <article>
-                    <h3>Presentación</h3>
-                    <p>{context.userFreelancer.description}</p>
-                </article>
-                <article>
-                    <a href="rutaDelArchivo" download="curriculumFreelancer">
-                        <img src="" alt="" />
-                        <p>Ver CV adjunto</p>
-                    </a>
-                </article>
-                {/* los botones deberían ir en otro componente con su lógica */}
-                <article>
-                    <div>
-                        <Link to='/yourProfile/editProfile'>
-                            <button>Editar perfil</button>
-                        </Link>
-                        <button type="button" onClick={() => { handleDeleteProfile() }}>Eliminar perfil</button>
+                <article className="free-detail">
+                    <div className="datos-freelancer">
+                        <img className="foto-detail" src={context.userFreelancer.img} alt={context.userFreelancer.name} />
+                        <div className="text-detail">
+                            <h3 className="name-detail">{context.userFreelancer.name} {context.userFreelancer.surname}</h3>
+                            <h4 className="location-detail">{context.userFreelancer.location}</h4>
+                            <h2 className="freelancer-dest budget-detail">{context.userFreelancer.budget} €<small>/hora</small></h2>
+                        </div>
+                    </div>
+                    <div className="datos-prof">
+                        <h6 className="info-title">Titulación</h6>
+                        <p>{context.userFreelancer.title}</p>
+
+                        <h6 className="info-title">Presentación</h6>
+                        <p>{context.userFreelancer.description}</p>
+                    </div>
+                    <div className="cv-detail">
+                        <a className="link-cv icon-cv" href="https://www.linkedin.com/feed/">㏌</a>
+                        <a className="link-cv" href="https://www.linkedin.com/feed/">Ver Perfil Linkedin</a>
+                    </div>
+                    <div className="edit-detail">
+                        <button className="freelancerRegister">
+                            <Link to='/yourProfile/editProfile'>
+                                Editar Perfil
+                            </Link>
+                        </button>
+                        <button className="freelancerRegister" type="button" onClick={() => { handleDeleteProfile() }}>Eliminar perfil</button>
                     </div>
                 </article>
             </section>

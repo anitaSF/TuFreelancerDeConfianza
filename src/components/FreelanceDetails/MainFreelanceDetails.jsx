@@ -35,8 +35,8 @@ function MainFreelanceDetails() {
                                 <p>{findFreelancer.description}</p>
                             </div>
                             <div className="cv-detail">
-                                <a className={`${context.classSelected} icon-cv`} style={{ backgroundColor: '#fff' }} href={findFreelancer.cv}>㏌</a>
-                                <a className={context.classSelected} style={{ backgroundColor: '#fff' }} href={findFreelancer.cv}>Ver Perfil Linkedin</a>
+                                <a className={`${context.classSelected} icon-cv`} style={{ backgroundColor: '#fff' }} href="https://www.linkedin.com/feed/">㏌</a>
+                                <a className={context.classSelected} style={{ backgroundColor: '#fff' }} href="https://www.linkedin.com/feed/">Ver Perfil Linkedin</a>
                             </div>
                             <div className="contact-detail">
                                 <button className={context.classSelected} >
