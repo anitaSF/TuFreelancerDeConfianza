@@ -88,12 +88,12 @@ export default function MainProfile() {
                         <a className="link-cv" href="https://www.linkedin.com/feed/">Ver Perfil Linkedin</a>
                     </div>
                     <div className="edit-detail">
-                        <button className="freelancerRegister">
+                        <button className="edit-btn">
                             <Link to='/yourProfile/editProfile'>
                                 Editar Perfil
                             </Link>
                         </button>
-                        <button className="freelancerRegister" type="button" onClick={() => { handleDeleteProfile() }}>Eliminar perfil</button>
+                        <button className="delete-btn" type="button" onClick={() => { handleDeleteProfile() }}><span>Eliminar perfil</span> 🗑</button>
                     </div>
                 </article>
             </section>

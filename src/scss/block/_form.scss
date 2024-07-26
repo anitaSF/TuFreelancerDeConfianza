@@ -81,6 +81,17 @@ form {
         font-family: $font-type;
     }
 
+    .cancel-edit {
+        border: 0;
+        background-color: transparent;
+
+
+        a {
+            color: rgb(212, 46, 17);
+            text-decoration: underline;
+        }
+    }
+
     .p-top {
         padding-top: 0px;
     }

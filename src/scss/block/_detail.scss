@@ -97,13 +97,24 @@
         justify-content: space-around;
         padding-top: 20px;
 
-        button {
+        .edit-btn {
             margin: 10px;
             min-width: 350px;
             color: $lightColor;
+            background-color: $secondaryColor;
 
             a {
                 color: $lightColor;
+            }
+        }
+
+        .delete-btn {
+            color: rgb(212, 46, 17);
+            border: 0;
+            background-color: transparent;
+
+            span {
+                text-decoration: underline;
             }
         }
     }

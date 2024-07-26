@@ -57,6 +57,7 @@ header {
 header nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 header nav .title-pag {
   color: white;
@@ -69,6 +70,13 @@ header nav .title-pag span {
 }
 header nav .title-pag .big-icon {
   font-size: 20px;
+}
+header nav .title-perfil {
+  color: white;
+  font-size: 1.5rem;
+}
+header nav .info {
+  color: white;
 }
 header .head-services {
   text-align: center;
@@ -318,6 +326,14 @@ form button {
   width: 100%;
   font-family: "Poppins", Helvetica, "Segoe UI", Tahoma, Arial, sans-serif;
 }
+form .cancel-edit {
+  border: 0;
+  background-color: transparent;
+}
+form .cancel-edit a {
+  color: rgb(212, 46, 17);
+  text-decoration: underline;
+}
 form .p-top {
   padding-top: 0px;
 }
@@ -506,6 +522,9 @@ form .m-bottom {
   font-size: 1.75rem;
   margin-top: 10px;
 }
+.free-detail .datos-freelancer .text-detail .freelancer-dest {
+  color: #FFBF00;
+}
 .free-detail .datos-prof {
   margin: 20px 10px;
   width: 100%;
@@ -525,9 +544,47 @@ form .m-bottom {
 .free-detail .cv-detail .icon-cv {
   font-size: 40px;
 }
+.free-detail .cv-detail .link-cv {
+  color: #FFBF00;
+}
 .free-detail .cv-detail a:hover {
   transform: scale(1.1);
   transition: all 0.3s;
+}
+.free-detail .contact-detail {
+  text-align: center;
+  margin: 0 auto;
+}
+.free-detail .contact-detail button {
+  margin-top: 40px;
+  min-width: 350px;
+  color: white;
+}
+.free-detail .contact-detail button a {
+  color: white;
+}
+.free-detail .edit-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-top: 20px;
+}
+.free-detail .edit-detail .edit-btn {
+  margin: 10px;
+  min-width: 350px;
+  color: white;
+  background-color: #FFBF00;
+}
+.free-detail .edit-detail .edit-btn a {
+  color: white;
+}
+.free-detail .edit-detail .delete-btn {
+  color: rgb(212, 46, 17);
+  border: 0;
+  background-color: transparent;
+}
+.free-detail .edit-detail .delete-btn span {
+  text-decoration: underline;
 }
 .free-detail .manitas {
   color: #FFAA06;
@@ -568,6 +625,10 @@ form .m-bottom {
   .free-detail .datos-freelancer .text-detail .budget-detail {
     font-size: 1.75rem;
     margin-top: 10px;
+  }
+  .free-detail .edit-detail {
+    flex-direction: row;
+    justify-content: space-around;
   }
 }
 * {
