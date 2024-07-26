@@ -13,7 +13,7 @@ function HeaderFreelanceList() {
         <header className={context.classSelected} style={{ backgroundImage: `url(${bgHeader})`, backgroundPosition: 'top' }}>
             <nav>
                 <Link to={'/services'}>
-                    <h2 className="title-pag"><span>❮</span>  {context.categorySelected} </h2>
+                    <h2 className="title-pag"><span>❮</span> {context.categorySelected} </h2>
                 </Link>
             </nav>
 

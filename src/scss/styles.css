@@ -191,6 +191,12 @@ main .separador-small {
   text-align: center;
 }
 
+@media (min-width: 1026px) {
+  .info-page article {
+    width: 100%;
+    padding: 0 40px;
+  }
+}
 .home {
   display: flex;
   flex-direction: column;
@@ -388,6 +394,180 @@ form .m-bottom {
   .services .card .icono-service {
     width: 60%;
     margin: 20px;
+  }
+}
+.box-list {
+  width: 100%;
+  padding: 10px;
+}
+.box-list .list-freelancers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: 30px;
+}
+
+.free-card {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  min-width: 350px;
+  max-width: 400px;
+  min-height: 250px;
+  border-radius: 20px;
+  border: 1px solid #d3d3d3;
+  padding: 20px 10px 10px 10px;
+}
+.free-card .datos-freelancer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.free-card .datos-freelancer .foto-perfil {
+  max-width: 170px;
+}
+.free-card .datos-freelancer .text-card {
+  text-align: left;
+  min-width: 150px;
+  max-width: 170px;
+  padding-left: 10px;
+  float: left;
+}
+.free-card .datos-freelancer .text-card .name-card {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+}
+.free-card .datos-freelancer .text-card .location-card {
+  font-weight: 400;
+}
+.free-card .datos-freelancer .text-card .budget-card {
+  font-size: 1.75rem;
+  margin-top: 10px;
+}
+.free-card .datos-freelancer .manitas {
+  color: #FFAA06;
+}
+.free-card .datos-freelancer .cuidador {
+  color: #1C694D;
+}
+.free-card .datos-freelancer .profesor {
+  color: #6750A4;
+}
+.free-card .datos-freelancer .tecnico {
+  color: #1692C7;
+}
+.free-card .datos-freelancer .canguro {
+  color: #89B729;
+}
+.free-card .datos-freelancer .auxiliar {
+  color: #E33A58;
+}
+
+@media (min-width: 1026px) {
+  .box-list {
+    padding: 30px 50px;
+  }
+}
+.free-detail {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  min-width: 350px;
+  max-width: 800px;
+  border-radius: 20px;
+  padding: 10px;
+}
+.free-detail .datos-freelancer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.free-detail .datos-freelancer .foto-detail {
+  max-width: 170px;
+}
+.free-detail .datos-freelancer .text-detail {
+  text-align: left;
+  min-width: 150px;
+  padding-left: 20px;
+}
+.free-detail .datos-freelancer .text-detail .name-detail {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+}
+.free-detail .datos-freelancer .text-detail .location-detail {
+  font-weight: 400;
+}
+.free-detail .datos-freelancer .text-detail .budget-detail {
+  font-size: 1.75rem;
+  margin-top: 10px;
+}
+.free-detail .datos-prof {
+  margin: 20px 10px;
+  width: 100%;
+}
+.free-detail .datos-prof .info-title {
+  font-size: 1.1rem;
+  margin-top: 10px;
+  font-weight: 500;
+}
+.free-detail .cv-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  text-align: center;
+}
+.free-detail .cv-detail .icon-cv {
+  font-size: 40px;
+}
+.free-detail .cv-detail a:hover {
+  transform: scale(1.1);
+  transition: all 0.3s;
+}
+.free-detail .manitas {
+  color: #FFAA06;
+}
+.free-detail .cuidador {
+  color: #1C694D;
+}
+.free-detail .profesor {
+  color: #6750A4;
+}
+.free-detail .tecnico {
+  color: #1692C7;
+}
+.free-detail .canguro {
+  color: #89B729;
+}
+.free-detail .auxiliar {
+  color: #E33A58;
+}
+
+@media (min-width: 1026px) {
+  .free-detail .datos-freelancer .foto-detail {
+    max-width: 450px;
+    width: 100%;
+  }
+  .free-detail .datos-freelancer .text-detail {
+    min-width: 300px;
+    padding-left: 20px;
+  }
+  .free-detail .datos-freelancer .text-detail .name-detail {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.75rem;
+  }
+  .free-detail .datos-freelancer .text-detail .location-detail {
+    font-weight: 400;
+  }
+  .free-detail .datos-freelancer .text-detail .budget-detail {
+    font-size: 1.75rem;
+    margin-top: 10px;
   }
 }
 * {

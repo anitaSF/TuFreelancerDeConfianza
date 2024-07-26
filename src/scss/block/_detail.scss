@@ -1,0 +1,125 @@
+.free-detail {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    min-width: 350px;
+    max-width: 800px;
+    border-radius: 20px;
+    padding: 10px;
+
+    .datos-freelancer {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+
+        .foto-detail {
+            max-width: 170px;
+        }
+
+        .text-detail {
+            text-align: left;
+            min-width: 150px;
+            padding-left: 20px;
+
+            .name-detail {
+                font-size: $font-dest;
+                font-weight: $medium;
+                line-height: 1.5rem;
+            }
+
+            .location-detail {
+                font-weight: $regular;
+            }
+
+            .budget-detail {
+                font-size: 1.75rem;
+                margin-top: 10px;
+            }
+        }
+    }
+
+    .datos-prof {
+        margin: 20px 10px;
+        width: 100%;
+
+        .info-title {
+            font-size: $font-body;
+            margin-top: 10px;
+            font-weight: $medium;
+        }
+    }
+
+    .cv-detail {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+        text-align: center;
+
+        .icon-cv {
+            font-size: 40px;
+        }
+    }
+
+    .cv-detail a:hover {
+        transform: scale(1.1);
+        transition: all 0.3s;
+    }
+
+    .manitas {
+        color: $manitasColor;
+    }
+
+    .cuidador {
+        color: $cuidadorColor;
+    }
+
+    .profesor {
+        color: $profesorColor;
+    }
+
+    .tecnico {
+        color: $tecnicoColor;
+    }
+
+    .canguro {
+        color: $canguroColor;
+    }
+
+    .auxiliar {
+        color: $auxiliarColor;
+    }
+}
+
+@media (min-width: 1026px) {
+    .free-detail {
+        .datos-freelancer {
+            .foto-detail {
+                max-width: 450px;
+                width: 100%;
+            }
+
+            .text-detail {
+                min-width: 300px;
+                padding-left: 20px;
+
+                .name-detail {
+                    font-size: $font-headline-min;
+                    font-weight: $medium;
+                    line-height: 1.75rem;
+                }
+
+                .location-detail {
+                    font-weight: $regular;
+                }
+
+                .budget-detail {
+                    font-size: 1.75rem;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}

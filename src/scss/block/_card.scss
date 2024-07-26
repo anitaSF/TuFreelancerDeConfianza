@@ -1,0 +1,89 @@
+.box-list {
+    width: 100%;
+    padding: 10px;
+
+    .list-freelancers {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        grid-gap: 30px;
+    }
+}
+
+.free-card {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    min-width: 350px;
+    max-width: 400px;
+    min-height: 250px;
+    border-radius: 20px;
+    border: 1px solid $greyColor;
+    padding: 20px 10px 10px 10px;
+
+    .datos-freelancer {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+
+        .foto-perfil {
+            max-width: 170px;
+        }
+
+        .text-card {
+            text-align: left;
+            min-width: 150px;
+            max-width: 170px;
+            padding-left: 10px;
+            float: left;
+
+            .name-card {
+                font-size: $font-dest;
+                font-weight: $medium;
+                line-height: 1.5rem;
+            }
+
+            .location-card {
+                font-weight: $regular;
+            }
+
+            .budget-card {
+                font-size: 1.75rem;
+                margin-top: 10px;
+            }
+        }
+
+        .manitas {
+            color: $manitasColor;
+        }
+
+        .cuidador {
+            color: $cuidadorColor;
+        }
+
+        .profesor {
+            color: $profesorColor;
+        }
+
+        .tecnico {
+            color: $tecnicoColor;
+        }
+
+        .canguro {
+            color: $canguroColor;
+        }
+
+        .auxiliar {
+            color: $auxiliarColor;
+        }
+
+    }
+
+}
+
+@media (min-width: 1026px) {
+    .box-list {
+        padding: 30px 50px;
+    }
+}
