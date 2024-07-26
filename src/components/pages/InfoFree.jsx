@@ -19,14 +19,13 @@ function InfoFree() {
     <>
       <header className="customerRegister" style={{ backgroundImage: `url(${bgHeader})`, backgroundPosition: 'top' }}>
         <nav>
-          <Link to={previousPage}>
+          <Link to="/services">
             <h2 className="title-pag"><span>❮</span>  Volver </h2>
           </Link>
         </nav>
-
       </header>
       <main>
-        <section className="body">
+        <section className="body info-page">
           <h2 className="subtitle text-center">Información general sobre Tu freelancer de confianza</h2>
           <hr className="separador-small" />
           <article>

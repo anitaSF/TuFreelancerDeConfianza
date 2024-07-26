@@ -122,3 +122,14 @@ main {
         text-align: center;
     }
 }
+
+@media (min-width: 1026px) {
+    .info-page {
+
+
+        article {
+            width: 100%;
+            padding: 0 40px;
+        }
+    }
+}

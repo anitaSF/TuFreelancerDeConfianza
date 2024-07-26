@@ -6,37 +6,45 @@ import { useParams } from "react-router-dom";
 function MainFreelanceDetails() {
     const context = useContext(freelanceContext);
 
+    context.changeClass();
+
     const { idFreelancer } = useParams();
 
     const findFreelancer = context.listFreelancer.find((freelancer) => freelancer.id === (idFreelancer));
 
     return (
-        <article className="free-card">
-            {findFreelancer ? (
-                <>
-                    <img src={findFreelancer.img} />
-                    <div className="text-card">
-                        <h3>{findFreelancer.name} {findFreelancer.surname}</h3>
-                        <h4>{findFreelancer.location}</h4>
-                        <h2>{findFreelancer.budget} €<small>/hora</small></h2>
-                    </div>
-                    <div>
-                        <h6>Titulación</h6>
-                        <p>{findFreelancer.title}</p>
-                    </div>
-                    <div>
-                        <h6>Presentación</h6>
-                        <p>{findFreelancer.description}</p>
-                    </div>
-                    <div>
-                        <a href={findFreelancer.cv}><img /></a>
-                        <a href={findFreelancer.cv}>Ver Perfil Linkedin</a>
-                    </div>
-                </>
-            ) : (
-                <p>Cargando...</p>
-            )}
-        </article>
+
+        <main>
+            <section className="body">
+                <article className="free-detail">
+                    {findFreelancer ? (
+                        <>
+                            <div className="datos-freelancer">
+                                <img className="foto-detail" src={findFreelancer.img} />
+                                <div className="text-detail">
+                                    <h3 className="name-detail">{findFreelancer.name} {findFreelancer.surname}</h3>
+                                    <h4 className="location-detail">{findFreelancer.location}</h4>
+                                    <h2 className={`${context.classSelected} budget-detail`} style={{ backgroundColor: '#fff' }}>{findFreelancer.budget} €<small>/hora</small></h2>
+                                </div>
+                            </div>
+                            <div className="datos-prof">
+                                <h6 className="info-title">Titulación</h6>
+                                <p>{findFreelancer.title}</p>
+
+                                <h6 className="info-title">Presentación</h6>
+                                <p>{findFreelancer.description}</p>
+                            </div>
+                            <div className="cv-detail">
+                                <a className={`${context.classSelected} icon-cv`} style={{ backgroundColor: '#fff' }} href={findFreelancer.cv}>㏌</a>
+                                <a className={context.classSelected} style={{ backgroundColor: '#fff' }} href={findFreelancer.cv}>Ver Perfil Linkedin</a>
+                            </div>
+                        </>
+                    ) : (
+                        <p>Cargando...</p>
+                    )}
+                </article>
+            </section>
+        </main>
     )
 }
 

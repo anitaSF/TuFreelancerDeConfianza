@@ -12,15 +12,19 @@ function MainFreelancersList() {
 
     return (
         <>
-            <article className={context.categorySelected}>
-                <ul>
-                    {filteredFreelancers.map((freelancer) => (
-                        <li key={freelancer.id}>
-                            <FreelancerCard freelancer={freelancer} />
-                        </li>
-                    ))}
-                </ul>
-            </article>
+            <main>
+                <section className="body">
+                    <article className={`${context.categorySelected} box-list`}>
+                        <ul className="list-freelancers">
+                            {filteredFreelancers.map((freelancer) => (
+                                <li key={freelancer.id}>
+                                    <FreelancerCard freelancer={freelancer} />
+                                </li>
+                            ))}
+                        </ul>
+                    </article>
+                </section>
+            </main>
         </>
     )
 }
