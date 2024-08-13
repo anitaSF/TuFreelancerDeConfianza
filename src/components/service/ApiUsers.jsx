@@ -6,7 +6,7 @@
 } */
 
 async function getUserRegister(userData) {
-    const solution = await fetch("https://proyecto-node-vercel.onrender.com/user/register", {
+    const solution = await fetch('https://proyecto-node-vercel.onrender.com/user/register', {
         method: 'POST',
         body: JSON.stringify(userData),
         headers: {

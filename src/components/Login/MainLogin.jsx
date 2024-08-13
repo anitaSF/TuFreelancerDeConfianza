@@ -1,6 +1,6 @@
 
 import { useState, useContext } from "react"
-import { Link, useAsyncError, useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { userDataContext } from "../Context/userDataContext.jsx";
 import { freelanceContext } from "../Context/frelanceContext.jsx";
 import { getUserLogin } from "../service/ApiUsers.jsx";
@@ -20,55 +20,61 @@ function MainLogin({ userType }) {
         password: ""
     });
 
-    const [btnActive, setbtnActive] = useState(false);
-
     const [empty, setEmpty] = useState("")
+
+
+    const [displayLoading, setdisplayLoading] = useState("none");
+    const [displayButton, setDisplayButton] = useState("block");
 
     const handleSubmit = async (ev) => {
         ev.preventDefault();
         if (userData.email && userData.password) {
+            setdisplayLoading("block");
+            setDisplayButton("none");
 
+            const solutionLogin = await getUserLogin(userData);
+            setEmpty("");
 
-            /*            const solutionLogin = await getUserLogin(userData);
-                       setEmpty("");
-           
-                       console.log(solutionLogin);
-           
-                       if (solutionLogin.success) {
-                           const token = await solutionLogin.token;
-                           await context.setUserData(token);
-                           localStorage.setItem("user", JSON.stringify(token));
-           
-                           localStorage.setItem("email", JSON.stringify(userData.email));
-           
-                           if (userType === 'customerRegister') {
-                               navigat('/services');
-           
-                           } else if (userType === 'freelancerRegister') {
-           
-                               contextFrelance.setUserFreelancer(userData);
-                               console.log(contextFrelance.listFreelancer);
-           
-                               const freelanceData = contextFrelance.listFreelancer;
-           
-                               const freelanceUserDataArray = freelanceData.filter((freelance) => {
-                                   return freelance.email === userData.email;
-                               });
-                               const [freelanceUserData] = freelanceUserDataArray;
-           
-                               if (freelanceUserData.email) {
-           
-                                   contextFrelance.setUserFreelancer(freelanceUserData);
-                                   navigat('/yourProfile');
-           
-                               } else {
-                                   setEmpty("Este usuario no es un freelancer. Por favor, realice el inicio de sesión en la opción de cliente.");
-                               }
-                           }
-                       } else {
-                           setEmpty(`No se ha podido iniciar sesión porque ${solutionLogin.message}`);
-                       } */
+            console.log(solutionLogin);
 
+            if (solutionLogin.success) {
+                const token = await solutionLogin.token;
+                await context.setUserData(token);
+                localStorage.setItem("user", JSON.stringify(token));
+
+                localStorage.setItem("email", JSON.stringify(userData.email));
+
+                if (userType === 'customerRegister') {
+                    navigat('/services');
+
+                } else if (userType === 'freelancerRegister') {
+
+                    contextFrelance.setUserFreelancer(userData);
+                    console.log(contextFrelance.listFreelancer);
+
+                    const freelanceData = contextFrelance.listFreelancer;
+
+                    const freelanceUserDataArray = freelanceData.filter((freelance) => {
+                        return freelance.email === userData.email;
+                    });
+                    const [freelanceUserData] = freelanceUserDataArray;
+
+                    if (freelanceUserData.email) {
+
+                        contextFrelance.setUserFreelancer(freelanceUserData);
+                        navigat('/yourProfile');
+
+                    } else {
+                        setEmpty("Este usuario no es un freelancer. Por favor, realice el inicio de sesión en la opción de cliente.");
+                        setdisplayLoading("none");
+                        setDisplayButton("block");
+                    }
+                }
+            } else {
+                setEmpty(`No se ha podido iniciar sesión porque ${solutionLogin.message}`);
+                setdisplayLoading("none");
+                setDisplayButton("block");
+            }
         } else {
 
             setEmpty("Por favor complete los campos");
@@ -106,11 +112,11 @@ function MainLogin({ userType }) {
 
                         <input className="field-login" onChange={handleChange} type="email" name="email" placeholder="Email" />
                         <input className="field-login" onChange={handleChange} type="password" name="password" placeholder="Contraseña" />
-                        <button className={userType} style={{ color: '#fff' }} type="submit">Acceder</button>
+                        <button className={userType} style={{ color: '#fff', display: displayButton }} type="submit">Acceder</button>
                     </form>
 
                 </article>
-                <article style={{ display: "none" }}>
+                <article style={{ display: displayLoading }}>
                     <Loding />
                 </article>
                 <article>

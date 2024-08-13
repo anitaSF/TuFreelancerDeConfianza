@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { userDataContext } from "../Context/userDataContext"
 import { getUserLogin, getUserRegister } from "../service/ApiUsers";
 import LoginData from "./LoginData";
+import Loding from "../loding/Loding";
 
 
 function MainRegisterCustomer() {
@@ -14,6 +15,10 @@ function MainRegisterCustomer() {
 
     const [errorText, setErrorText] = useState("");
 
+    const [displayLoading, setdisplayLoading] = useState("none");
+
+    const [displayButton, setDisplayButton] = useState("block");
+
     const handleChange = (ev) => {
         ev.preventDefault();
         setUserForm({ ...userForm, [ev.target.id]: ev.target.value });
@@ -21,6 +26,9 @@ function MainRegisterCustomer() {
 
     const handleSubmit = async (ev) => {
         ev.preventDefault();
+
+        setdisplayLoading("block");
+        setDisplayButton("none");
 
         const response = await getUserRegister(userForm);
 
@@ -42,10 +50,20 @@ function MainRegisterCustomer() {
                 localStorage.setItem("user", JSON.stringify(token));
                 navigate('/services')
             } else {
-                setErrorText(`No se ha podido iniciar la sesión porque ${loginreesponse.message}`)
+                setErrorText(`No se ha podido iniciar la sesión porque ${loginreesponse.message}`);
+                setdisplayLoading("none");
+                setDisplayButton("block");
             }
+        } else if (response.message) {
+
+            setErrorText(`No se ha podido realizar el registro porque ${response.message}`);
+            setdisplayLoading("none");
+            setDisplayButton("block");
+
         } else {
-            setErrorText(`No se ha podido realizar el registro porque ${response.message}`)
+            setErrorText(`No se ha podido realizar el registro`);
+            setdisplayLoading("none");
+            setDisplayButton("block");
         }
 
         ev.target.reset();
@@ -65,6 +83,9 @@ function MainRegisterCustomer() {
                     <LoginData />
                     <button className="btn-clientes" type="submit">Registrarme</button>
                 </form>
+                <article style={{ display: displayLoading }}>
+                    <Loding />
+                </article>
             </section>
         </main>
     )

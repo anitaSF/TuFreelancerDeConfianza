@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 function Loding() {
     return (
         <div>
-            <Spinner color="secundary" />
+            <Spinner color="secondary" />
         </div>
     )
 }
