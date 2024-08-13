@@ -81,7 +81,7 @@ function MainRegisterCustomer() {
 
                 <form className="margin-med" onChange={handleChange} onSubmit={handleSubmit}>
                     <LoginData />
-                    <button className="btn-clientes" type="submit">Registrarme</button>
+                    <button className="btn-clientes" type="submit" style={{ display: displayButton }}>Registrarme</button>
                 </form>
                 <article style={{ display: displayLoading }}>
                     <Loding />

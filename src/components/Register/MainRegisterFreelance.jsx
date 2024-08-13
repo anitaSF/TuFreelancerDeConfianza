@@ -5,6 +5,7 @@ import { freelanceContext } from "../Context/frelanceContext";
 import { getPostFreelancerData } from "../service/ApiFreelancers";
 import { getUserLogin, getUserRegister } from "../service/ApiUsers";
 import LoginData from "./LoginData";
+import Loding from "../loding/Loding";
 
 
 function MainRegisterFreelance() {
@@ -19,6 +20,10 @@ function MainRegisterFreelance() {
     const [userFreelanceData, setuserFreelanceData] = useState({});
 
     const [errorText, setErrorText] = useState("");
+
+    const [displayLoading, setdisplayLoading] = useState("none");
+
+    const [displayButton, setDisplayButton] = useState("block");
 
     const handleChange = (ev) => {
         ev.preventDefault();
@@ -36,6 +41,10 @@ function MainRegisterFreelance() {
 
     const handleSubmit = async (ev) => {
         ev.preventDefault();
+
+        setdisplayLoading("block");
+        setDisplayButton("none");
+
         contextFreelance.setUserFreelancer(userFreelanceData);
 
         const solutionRegiter = await getUserRegister(loginData);
@@ -54,9 +63,13 @@ function MainRegisterFreelance() {
                 navigate('/yourProfile')
             } else {
                 setErrorText("El registro se ha realizado correctamente pero no se ha podido iniciar sesión. Por favor acuda a la página de login para iniciar sesión")
+                setdisplayLoading("none");
+                setDisplayButton("block");
             }
         } else {
-            setErrorText(`No se ha podido realizar el registro porque ${solutionRegiter.message}`)
+            setErrorText(`No se ha podido realizar el registro porque ${solutionRegiter.message}`);
+            setdisplayLoading("none");
+            setDisplayButton("block");
         }
 
         ev.target.reset()
@@ -118,8 +131,11 @@ function MainRegisterFreelance() {
                             <textarea type="text" name="description" id="description" placeholder="Escribe tu carta de presentación" />
                         </fieldset>
                     </fieldset>
-                    <button className="btn-freelancer" type="submit">Regístrarme</button>
+                    <button className="btn-freelancer" type="submit" style={{ display: displayButton }}>Regístrarme</button>
                 </form>
+                <article style={{ display: displayLoading }}>
+                    <Loding />
+                </article>
             </section>
         </main>
     )
