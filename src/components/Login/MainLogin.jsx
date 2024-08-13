@@ -103,7 +103,6 @@ function MainLogin({ userType }) {
                     <button className={userType} style={{ color: '#fff' }} type="submit">Acceder</button>
 
                 </form>
-                <p>{empty}</p>
 
                 {/* aquí hay que ponerle una funcionalidad y vrear más paginas No merece la pena añadirlo
             <p>Olvidaste tu contraseña</p>
