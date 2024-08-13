@@ -104,10 +104,6 @@ function MainLogin({ userType }) {
 
                 </form>
 
-                {/* aquí hay que ponerle una funcionalidad y vrear más paginas No merece la pena añadirlo
-            <p>Olvidaste tu contraseña</p>
-            */}
-
                 <div>
                     <span className="text-small">¿Todavia no tienes una cuenta?
                     </span>
