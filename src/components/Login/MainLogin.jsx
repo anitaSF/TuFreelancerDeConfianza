@@ -100,8 +100,7 @@ function MainLogin({ userType }) {
 
                     <input className="field-login" onChange={handleChange} type="email" name="email" placeholder="Email" />
                     <input className="field-login" onChange={handleChange} type="password" name="password" placeholder="Contraseña" />
-                    <button className={userType} style={{ color: '#fff' }} type="submit">Acceder</button>
-
+                    <Link to="/services"><button className={userType} style={{ color: '#fff' }} type="submit">Acceder</button></Link>
                 </form>
                 <p>{empty}</p>
 
