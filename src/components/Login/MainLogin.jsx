@@ -15,8 +15,8 @@ function MainLogin({ userType }) {
     const contextFrelance = useContext(freelanceContext);
 
     const [userData, setUserData] = useState({
-        email: "",
-        password: ""
+        email: "dummy@gmail.com",
+        password: "DummyPass123"
     })
 
     const [empty, setEmpty] = useState("")
@@ -98,8 +98,12 @@ function MainLogin({ userType }) {
 
                 <form onSubmit={handleSubmit}>
 
-                    <input className="field-login" onChange={handleChange} type="email" name="email" placeholder="Email" />
-                    <input className="field-login" onChange={handleChange} type="password" name="password" placeholder="Contraseña" />
+                    <p style={{ fontSize: '0.8rem', opacity: 0.8, marginBottom: '1rem', textAlign: 'center' }}>
+                        💡 <strong>Modo Demo:</strong> Las credenciales ya están precargadas. Haz clic en "Acceder".
+                    </p>
+
+                    <input className="field-login" onChange={handleChange} type="email" name="email" value={userData.email} placeholder="Email" />
+                    <input className="field-login" onChange={handleChange} type="password" name="password" value={userData.password} placeholder="Contraseña" />
                     <button className={userType} style={{ color: '#fff' }} type="submit">Acceder</button>
 
                 </form>
